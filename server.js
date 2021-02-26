@@ -3,7 +3,7 @@ var app = express();
 const got = require('got');
 
 const port = 8080;
-let defHeaders = {'Content-Type': 'application/json','Content-Length': 29,'Host':'localhost'};
+let defHeaders = {'Content-Type': 'application/json'};
 let gotReq = got.extend({
 	prefixUrl: 'https://reqres.in/',
 	responseType: 'json',
@@ -60,8 +60,7 @@ async function gotCall({url,data = {},method = 'get',headerExtra = {}}){
 
 app.get("/halo", async (req, res) => {
     // res.send('page not found');
-    console.log('tes',await gotCall({method:'post',url:'api/login',data:{
-        "email": "eve.holt@reqres.in",
-        "password": "cityslicka"
-    }}))
+    // console.log('tes',await gotCall({method:'get',url:'api/users'}))
+    let callData = await gotCall({method:'get',url:'api/users'})
+    res.send(callData);
 });
