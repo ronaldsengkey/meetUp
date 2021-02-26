@@ -1,20 +1,15 @@
 <template>
   <div>
     <v-container fluid class="ma-0">
-      <v-carousel
-        cycle
-        height="150"
-        class="rounded-xl mb-5"
-        :show-arrows="false"
-      >
-        <v-carousel-item v-for="(slide, i) in slides" :key="i">
-          <v-sheet :color="colors[i]" height="100%">
-            <v-row class="fill-height" align="center" justify="center">
-              <div class="display-3">{{ slide }} Slide</div>
-            </v-row>
-          </v-sheet>
-        </v-carousel-item>
-      </v-carousel>
+     <slider animation="normal" :interval="5000" :control-btn="false" class="rounded-xl mb-5" height="150px">
+        <slider-item
+        class="ma-0 pa-0"
+          v-for="(slide, i) in slides" :key="i"
+          :style="i"
+        >
+          <v-img src="@/assets/Landing/bannerMember.png" height="100%" contain></v-img>
+        </slider-item>
+      </slider>
 
       <p class="fs14 weight-700 username">
         What do you need?<span class="float-right fs14 welcome"
