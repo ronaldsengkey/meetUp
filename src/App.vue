@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app>
+    <!-- <v-navigation-drawer v-model="drawer" app>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
@@ -38,9 +38,9 @@
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>meetUp</v-toolbar-title>
-    </v-app-bar>
+    </v-app-bar> -->
 
-    <v-main>
+    <v-main class="home">
       <router-view></router-view>
     </v-main>
   </v-app>
@@ -57,5 +57,14 @@
         ],
       right: null,
     }),
+    mounted(){
+      console.log('pr',process.env.VUE_APP_URL);
+    }
   }
 </script>
+
+<style scoped>
+.home {
+    background: url('./assets/Home/background.png');
+  }
+</style>

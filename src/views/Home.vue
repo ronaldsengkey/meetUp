@@ -1,137 +1,87 @@
 <template>
-  <div class="home">
-    <!-- <h2 class="mt-2 font-weight-black pl-4 ">Home Page</h2> -->
-    <v-carousel class="" hide-delimiters height="200">
-      <v-carousel-item
-        v-for="(item,i) in items"
-        :key="i"
-        :src="item.src"
-        :class="rounded-lg"
-      ></v-carousel-item>
-    </v-carousel>
-
-    <v-fade-transition mode="out-in">
-      <v-container class="grey lighten-5">
-      <!-- <v-row no-gutters>
-        <v-col
-          v-for="n in 3"
-          :key="n"
-          cols="4"
-          sm="4"
-        >
-          <v-card
-            class="pa-1 ma-1"
-            outlined
-            tile
+  <div>
+    <v-layout fill-height>
+      <v-navigation-drawer absolute bottom v-model="drawer" temporary>
+        <v-list nav dense>
+          <v-list-item-group
+            v-model="group"
+            active-class="deep-purple--text text--accent-4"
           >
-            <v-img
-              lazy-src="https://picsum.photos/id/11/10/6"
-              max-height="150"
-              max-width="250"
-              src="https://picsum.photos/id/11/500/300"
-            ></v-img>
-          </v-card>
-        </v-col>
-      </v-row> -->
+            <v-list-item>
+              <v-list-item-title>Foo</v-list-item-title>
+            </v-list-item>
 
-      <v-row>
-        <v-col cols="4">
-          <v-card class="text-center pt-3">
-            <center>
-              <v-img
-                max-height="40"
-                max-width="40"
-                lazy-src="https://cdn.onlinewebfonts.com/svg/img_486935.png"
-                src="https://cdn.onlinewebfonts.com/svg/img_486935.png"
-              ></v-img>
-            </center>
-            <v-card-subtitle class="subtitle-2 text-center">
-              Stylist
-            </v-card-subtitle>
-          </v-card>
-        </v-col>
-        <v-col cols="4">
-          <v-card class="text-center pt-3">
-            <center>
-              <v-img
-                max-height="80"
-                max-width="80"
-                lazy-src="https://cdn.onlinewebfonts.com/svg/img_531937.png"
-                src="https://cdn.onlinewebfonts.com/svg/img_531937.png"
-              ></v-img>
-            </center>
-            <v-card-subtitle class="subtitle-2 text-center">
-              Body Fit
-            </v-card-subtitle>
-          </v-card>
-        </v-col>
-        <v-col cols="4">
-          <v-card class="text-center pt-3">
-            <!-- <v-icon class="mt-3"
-              large
-              color="orange darken-2"
-            >
-              mdi-message-text
-            </v-icon> -->
-            <center>
-              <v-img
-                  max-height="40"
-                  max-width="40"
-                  lazy-src="https://www.flaticon.com/svg/static/icons/svg/2965/2965462.svg"
-                  src="https://www.flaticon.com/svg/static/icons/svg/2965/2965462.svg"
-                ></v-img>
-            </center>
-            <v-card-subtitle class="subtitle-2 text-center">
-              Groomers
-            </v-card-subtitle>
-          </v-card>
-        </v-col>
-        <!-- <v-col cols="4">
-          <v-card class="text-align:center;">
-            <v-img
-              src="https://picsum.photos/350/165?random"
-              height="66"
-              class="grey darken-4"
-            ></v-img>
-            <v-card-subtitle class="subtitle-2 text-center">
-              Groomers
-            </v-card-subtitle>
-          </v-card>
-        </v-col> -->
-      </v-row>
+            <v-list-item>
+              <v-list-item-title>Bar</v-list-item-title>
+            </v-list-item>
 
-    </v-container>
+            <v-list-item>
+              <v-list-item-title>Fizz</v-list-item-title>
+            </v-list-item>
 
+            <v-list-item>
+              <v-list-item-title>Buzz</v-list-item-title>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
+    </v-layout>
 
-    </v-fade-transition>
+    <v-app-bar
+      class="appbar bgTransparent"
+      app
+      elevation="0"
+      flat
+      dense
+      hide-on-scroll
+    >
+      <v-app-bar-nav-icon
+        color="darkenPrimary"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+      <v-spacer></v-spacer>
+      <v-avatar size="28">
+        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="John" />
+      </v-avatar>
+    </v-app-bar>
+
+    <v-main style="padding:6px 0px 0px 12px">
+      <router-view></router-view>
+    </v-main>
+
+    <v-bottom-navigation :value="value" grow fixed>
+      <v-btn>
+        <v-avatar color="primary" size="35">
+          <v-icon>mdi-home</v-icon>
+        </v-avatar>
+      </v-btn>
+
+      <v-btn>
+        <v-avatar size="35">
+          <v-icon>mdi-book</v-icon>
+        </v-avatar>
+      </v-btn>
+
+      <v-btn>
+        <v-avatar size="35">
+          <v-icon>mdi-bullhorn</v-icon>
+        </v-avatar>
+      </v-btn>
+    </v-bottom-navigation>
   </div>
 </template>
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  data () {
-      return {
-        items: [
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          },
-        ],
-      }
-    },
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  data: () => ({
+    value: 0,
+    group : null,
+    adminName: "tes",
+    adminImage: "https://randomuser.me/api/portraits/men/85.jpg",
+    drawer: null,
+  }),
+};
 </script>
+
+<style scoped>
+@import "../../src/assets/css/main.css";
+</style>

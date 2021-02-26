@@ -1,0 +1,74 @@
+.h-100 {
+    height: 100% !important;
+}
+.minH-60 {
+    min-height: 60% !important;
+}
+.minH-100 {
+    min-height: 100% !important;
+}
+.weight-700 {
+    font-weight: 700 !important;
+}
+.fs24 {
+    font-size: 24px !important;
+}
+.fs14 {
+    font-size: 14px !important;
+}
+.fs9 {
+  font-size: 9px !important;
+}
+.fs11 {
+  font-size: 11px !important;
+}
+  .welcome {
+    color: #bcc2d4;
+  }
+  .max-height125{
+      max-height: 125px !important;
+  }
+  .username {
+    color: #3b3530;
+  }
+  .fs12 {
+    font-size: 12px !important;
+  }
+  .weight-800 {
+    font-weight: 800 !important;
+  }
+  .border {
+    border-radius: 8px !important;
+  }
+  .borderExtra {
+    border-radius: 15px !important;
+  }
+  .rtl {
+      direction: rtl !important;
+  }
+  .bgTransparent {
+    background: transparent !important;
+  }
+
+  .position-relative {
+    position: relative !important;
+  }
+  .top-right-absolute {
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+  }
+  .top-center-absolute {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bottom-center-absolute {
+    position: absolute !important;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+  }
