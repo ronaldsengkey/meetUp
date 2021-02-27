@@ -120,7 +120,7 @@ export default {
         {
           name : 'Grooming',
           image : '',
-          route : 'grooming'
+          route : 'groomingPlace'
         },
         {
           name : 'Lifestyle',

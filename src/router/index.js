@@ -35,16 +35,16 @@ const routes = [
     path: '/grooming',
     name: 'Grooming',
     component: Grooming,
-    // children : [
-    //   {
-    //     path: '/homeMember',
-    //     component: HomeMember
-    //   },
-    //   {
-    //     path: '/homeGuest',
-    //     component: HomeGuest
-    //   }
-    // ]
+    children : [
+      {
+        path: '/groomingPlace',
+        component: GroomingPlace
+      },
+      {
+        path: '/groomer',
+        component: Groomer
+      }
+    ]
   },
 ]
 
