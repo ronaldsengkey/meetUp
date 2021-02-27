@@ -72,3 +72,9 @@
     transform: translate(-50%, -50%);
     margin: 0 auto;
   }
+  .flexEnd {
+    align-self: flex-end !important;
+  }
+  .alignCenter {
+    align-self: center !important;
+  }

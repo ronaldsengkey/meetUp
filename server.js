@@ -16,7 +16,6 @@ const staticFileMiddleware = express.static('dist');
 // 1st call for unredirected requests 
 app.use(staticFileMiddleware);
 
-// Support history api
 app.get("/", (_req, res) => {
     try {
       res.sendFile('/dist/index.html');

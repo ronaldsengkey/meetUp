@@ -75,6 +75,49 @@
             <v-icon>mdi-magnify</v-icon>
           </v-fade-transition> </template
       ></v-text-field>
+
+
+       <v-sheet elevation="1" class="rounded-xl pa-1">
+        <v-row>
+          <v-col cols="2" class="ml-4 alignCenter">
+            <v-avatar size="48">
+              <img
+                src="https://randomuser.me/api/portraits/men/85.jpg"
+                alt="John"
+              />
+            </v-avatar>
+          </v-col>
+          <v-col cols="4">
+            <span class="fs11 weight-700 username">
+              Meet Star
+            </span>
+            <span>
+              <v-rating
+                v-model="rating"
+                background-color="orange lighten-3"
+                color="orange"
+                dense
+                small
+              ></v-rating>
+            </span>
+            <span class="fs9 welcome">33 years old</span>
+          </v-col>
+          <v-col cols="2" class="alignCenter">
+            <div class="flex-column">
+              <v-img
+                src="@/assets/Home/certificate.png"
+                max-width="60px"
+                max-height="60px"
+              ></v-img>
+            </div>
+          </v-col>
+          <v-col cols="3" class="flexEnd">
+            <v-icon x-small color="red">mdi-clock-time-four</v-icon><span class="ml-1 fs12 weight-700">1h</span>
+            <p class="fs12 weight-700">Rp. 10k</p>
+          </v-col>
+        </v-row>
+      </v-sheet>
+
     </v-container>
   </div>
 </template>
@@ -83,6 +126,8 @@
 export default {
   data() {
     return {
+      model: null,
+      rating: 5,
       colors: [
         "indigo",
         "warning",
@@ -97,5 +142,5 @@ export default {
 </script>
 
 <style>
-@import '../../src/assets/css/main.css';
+@import '../../../src/assets/css/main.css';
 </style>

@@ -29,6 +29,7 @@
               hover
               height="100"
               width="100"
+              @click="$router.push(menu.route)"
             >
               <v-card-title class="white--text">
                 <span class="fs12">{{menu.name}}</span>
@@ -82,19 +83,18 @@
             </span>
             <span class="fs9 welcome">33 years old</span>
           </v-col>
-          <v-col cols="2" class="flexEnd">
+          <v-col cols="2" class="alignCenter">
             <div class="flex-column">
               <v-img
                 src="@/assets/Home/certificate.png"
                 max-width="60px"
                 max-height="60px"
               ></v-img>
-              <v-icon x-small color="red">mdi-clock-time-four</v-icon
-              ><span class="ml-1 fs12 weight-700">1h</span>
             </div>
           </v-col>
           <v-col cols="3" class="flexEnd">
-            <span class="ml-1 fs12 weight-700">Rp. 10k</span>
+            <v-icon x-small color="red">mdi-clock-time-four</v-icon><span class="ml-1 fs12 weight-700">1h</span>
+            <p class="fs12 weight-700">Rp. 10k</p>
           </v-col>
         </v-row>
       </v-sheet>
@@ -119,7 +119,8 @@ export default {
       menu : [
         {
           name : 'Grooming',
-          image : ''
+          image : '',
+          route : 'grooming'
         },
         {
           name : 'Lifestyle',
@@ -138,11 +139,5 @@ export default {
 </script>
 
 <style>
-@import "../../src/assets/css/main.css";
-.flexEnd {
-  align-self: flex-end !important;
-}
-.alignCenter {
-  align-self: center !important;
-}
+@import "../../../src/assets/css/main.css";
 </style>

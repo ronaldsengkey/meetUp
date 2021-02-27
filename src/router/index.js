@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/Home/Home.vue'
 import Landing from '../views/Landing.vue'
-import HomeMember from '../views/HomeMember.vue'
-import HomeGuest from '../views/HomeGuest.vue'
+import HomeMember from '../views/Home/HomeMember.vue'
+import HomeGuest from '../views/Home/HomeGuest.vue'
+import Grooming from '../views/Grooming/Grooming.vue'
+import Groomer from '../views/Grooming/Groomer.vue'
+import GroomingPlace from '../views/Grooming/GroomingPlace.vue'
 
 Vue.use(VueRouter)
 
@@ -18,10 +21,6 @@ const routes = [
     name: 'Home',
     component: Home,
     children : [
-      // {
-      //   path: '/',
-      //   component: () => import('../views/Landing.vue')
-      // },
       {
         path: '/homeMember',
         component: HomeMember
@@ -31,6 +30,21 @@ const routes = [
         component: HomeGuest
       }
     ]
+  },
+  {
+    path: '/grooming',
+    name: 'Grooming',
+    component: Grooming,
+    // children : [
+    //   {
+    //     path: '/homeMember',
+    //     component: HomeMember
+    //   },
+    //   {
+    //     path: '/homeGuest',
+    //     component: HomeGuest
+    //   }
+    // ]
   },
 ]
 
