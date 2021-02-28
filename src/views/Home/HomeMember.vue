@@ -1,5 +1,4 @@
 <template>
-  <div>
     <v-container fluid class="ma-0">
       <p class="fs14 welcome">Welcome back</p>
       <p class="fs14 weight-800 username">Username</p>
@@ -24,23 +23,21 @@
         <v-slide-group v-model="model" center-active>
           <v-slide-item v-for="menu in menu" :key="menu.name">
             <v-card
-              class="border primary mr-2"
+              :class="menu.class"
               outlined
               hover
-              height="100"
+              height="125"
               width="100"
               @click="$router.push(menu.route)"
             >
               <v-card-title class="white--text">
                 <span class="fs12">{{menu.name}}</span>
               </v-card-title>
-               <v-card-text class="rtl" v-if="menu.image">
+               <div class="rtl position-absolute" style="right:15%;bottom:0;" v-if="menu.image">
                 <v-img
                   :src="require(`@/assets/${menu.image}`)"
-                  width="40"
-                  height="40"
                 />
-              </v-card-text>
+              </div>
             </v-card>
           </v-slide-item>
         </v-slide-group>
@@ -78,6 +75,7 @@
                 background-color="orange lighten-3"
                 color="orange"
                 dense
+                readonly
                 small
               ></v-rating>
             </span>
@@ -99,11 +97,9 @@
         </v-row>
       </v-sheet>
     </v-container>
-  </div>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -120,14 +116,17 @@ export default {
         {
           name : 'Grooming',
           image : '',
+          class : "border primary mr-2 position-relative",
           route : 'groomingPlace'
         },
         {
           name : 'Lifestyle',
+          class : "border teal mr-2 position-relative",
           image : 'Home/concertIcon.png'
         },
         {
           name : 'Barber',
+          class : "border purple mr-2 position-relative",
           image: 'Home/scissor.png'
           
         }

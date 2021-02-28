@@ -64,31 +64,15 @@
       <router-view></router-view>
     </v-main>
 
-    <v-bottom-navigation :value="value" grow fixed>
-      <v-btn>
-        <v-avatar size="35">
-          <v-icon color="black">mdi-home</v-icon>
-        </v-avatar>
-      </v-btn>
-
-      <v-btn>
-        <v-avatar size="35">
-          <v-icon color="black">mdi-book</v-icon>
-        </v-avatar>
-      </v-btn>
-
-      <v-btn>
-        <v-avatar size="35">
-          <v-icon color="black">mdi-bullhorn</v-icon>
-        </v-avatar>
-      </v-btn>
-    </v-bottom-navigation>
+    <BottomNavigation :value="0"></BottomNavigation>
     
   </v-container>
 </template>
 
 <script>
+import BottomNavigation from "@/components/BottomNavigation.vue"
 export default {
+  components: { BottomNavigation },
   data: () => ({
     value: 0,
     toggle_exclusive: 0

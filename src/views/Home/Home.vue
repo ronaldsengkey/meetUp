@@ -51,35 +51,18 @@
     <v-main style="padding:6px 0px 0px 12px">
       <router-view></router-view>
     </v-main>
-
-    <v-bottom-navigation :value="value" grow fixed>
-      <v-btn>
-        <v-avatar color="primary" size="35">
-          <v-icon color="black">mdi-home</v-icon>
-        </v-avatar>
-      </v-btn>
-
-      <v-btn>
-        <v-avatar size="35">
-          <v-icon color="black">mdi-book</v-icon>
-        </v-avatar>
-      </v-btn>
-
-      <v-btn>
-        <v-avatar size="35">
-          <v-icon color="black">mdi-bullhorn</v-icon>
-        </v-avatar>
-      </v-btn>
-    </v-bottom-navigation>
+    
+    <BottomNavigation :value="0"></BottomNavigation>
   </div>
 </template>
 <script>
+import BottomNavigation from "@/components/BottomNavigation.vue"
+
 export default {
+  components: { BottomNavigation },
   data: () => ({
     value: 0,
     group : null,
-    adminName: "tes",
-    adminImage: "https://randomuser.me/api/portraits/men/85.jpg",
     drawer: null,
   }),
 };

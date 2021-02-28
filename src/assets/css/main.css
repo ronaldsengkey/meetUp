@@ -120,3 +120,6 @@
   .darkenColor {
     color: #F0B04D !important;
   }
+  .v-main__wrap {
+    overflow-y: hidden !important;
+  }

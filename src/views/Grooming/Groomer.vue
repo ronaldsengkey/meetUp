@@ -32,6 +32,7 @@
               background-color="orange lighten-3"
               color="orange"
               dense
+              readonly
               small
             ></v-rating>
           </span>
@@ -74,6 +75,7 @@
               background-color="orange lighten-3"
               color="orange"
               dense
+              readonly
               small
             ></v-rating>
           </span>
@@ -116,6 +118,7 @@
               background-color="orange lighten-3"
               color="orange"
               dense
+              readonly
               small
             ></v-rating>
           </span>

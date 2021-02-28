@@ -32,6 +32,7 @@
               background-color="orange lighten-3"
               color="orange"
               dense
+              readonly
               small
             ></v-rating>
           </span>
@@ -65,6 +66,7 @@
               color="orange"
               dense
               small
+              readonly
             ></v-rating>
           </span>
           <span class="fs9 welcome">45 Visitors</span>
@@ -97,6 +99,7 @@
               color="orange"
               dense
               small
+              readonly
             ></v-rating>
           </span>
           <span class="fs9 welcome">40 Visitors</span>

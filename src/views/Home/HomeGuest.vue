@@ -18,55 +18,27 @@
       </p>
 
       <v-layout align-center justify-center class="mb-5">
-        <v-card
-          class="border primary mr-2"
-          outlined
-          hover
-          height="100"
-          width="100"
-        >
-          <v-card-title class="white--text">
-            <span class="fs12">Grooming</span>
-          </v-card-title>
-        </v-card>
-        <v-card
-          class="border darken mr-2"
-          outlined
-          hover
-          height="100"
-          width="100"
-        >
-          <v-card-title class="white--text">
-            <span class="fs12">Lifestyle</span>
-          </v-card-title>
-          <v-card-text class="rtl">
-              <v-img
-                src="@/assets/Home/concertIcon.png"
-                width="40"
-                height="40"
-                
+        <v-slide-group v-model="model" center-active>
+          <v-slide-item v-for="menu in menu" :key="menu.name">
+            <v-card
+              :class="menu.class"
+              outlined
+              hover
+              height="125"
+              width="100"
+              @click="$router.push(menu.route)"
+            >
+              <v-card-title class="white--text">
+                <span class="fs12">{{menu.name}}</span>
+              </v-card-title>
+               <div class="rtl position-absolute" style="right:15%;bottom:0;" v-if="menu.image">
+                <v-img
+                  :src="require(`@/assets/${menu.image}`)"
                 />
-          </v-card-text>
-        </v-card>
-        <v-card
-          class="border orange mr-2"
-          outlined
-          hover
-          height="100"
-          width="100"
-        >
-          <v-card-title class="white--text">
-            <span class="fs12">Barber</span>
-          </v-card-title>
-           <v-card-text class="rtl">
-              <v-img
-                src="@/assets/Home/scissor.png"
-                width="40"
-                height="40"
-                
-                />
-          </v-card-text>
-        </v-card>
+              </div>
+            </v-card>
+          </v-slide-item>
+        </v-slide-group>
       </v-layout>
 
       <v-text-field label="Search" solo class="borderExtra" outlined flat dense
@@ -97,6 +69,7 @@
                 background-color="orange lighten-3"
                 color="orange"
                 dense
+                readonly
                 small
               ></v-rating>
             </span>
@@ -134,6 +107,25 @@ export default {
         "pink darken-2",
         "red lighten-1",
         "deep-purple accent-4",
+      ],
+      menu : [
+        {
+          name : 'Grooming',
+          image : '',
+          class : "border primary mr-2 position-relative",
+          route : 'groomingPlace'
+        },
+        {
+          name : 'Lifestyle',
+          class : "border teal mr-2 position-relative",
+          image : 'Home/concertIcon.png'
+        },
+        {
+          name : 'Barber',
+          class : "border purple mr-2 position-relative",
+          image: 'Home/scissor.png'
+          
+        }
       ],
       slides: ["First", "Second", "Third", "Fourth", "Fifth"],
     };
