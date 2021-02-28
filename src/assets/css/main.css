@@ -19,8 +19,17 @@
 .fs9 {
   font-size: 9px !important;
 }
+.fs10 {
+  font-size: 10px !important;
+}
 .fs11 {
   font-size: 11px !important;
+}
+.fs28 {
+  font-size: 28px !important;
+}
+.weight-300 {
+  font-weight: 300 !important;
 }
   .welcome {
     color: #bcc2d4;
@@ -78,15 +87,36 @@
   .alignCenter {
     align-self: center !important;
   }
+  .alignStart {
+    align-self: baseline !important;
+  }
   .white--text{
     color: white !important;
   }
   .red--text{
     color: red !important;
   }
-  .green-text{
+  .green--text{
     color: green !important;
+  }
+  .black--text{
+    color: black !important;
   }
   .flexStretch {
     align-self: center !important;
+  }
+  .bottomRightRadius {
+    border-bottom-right-radius: 50px !important;
+  }
+  .bottomLeftRadius {
+    border-bottom-left-radius: 50px !important;
+  }
+  .noPointer {
+    pointer-events: none !important;
+  }
+  .position-absolute {
+    position: absolute !important;
+  }
+  .darkenColor {
+    color: #F0B04D !important;
   }

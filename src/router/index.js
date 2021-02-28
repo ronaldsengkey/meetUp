@@ -7,6 +7,7 @@ import HomeGuest from '../views/Home/HomeGuest.vue'
 import Grooming from '../views/Grooming/Grooming.vue'
 import Groomer from '../views/Grooming/Groomer.vue'
 import GroomingPlace from '../views/Grooming/GroomingPlace.vue'
+import GroomerProfile from '../views/Grooming/GroomerProfile.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ const routes = [
         component: Groomer
       }
     ]
+  },
+  {
+    path: '/groomerProfile',
+    name: 'groomerProfile',
+    component: GroomerProfile
   },
 ]
 

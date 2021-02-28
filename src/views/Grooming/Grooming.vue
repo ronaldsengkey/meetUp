@@ -38,7 +38,7 @@
               Grooming Place
             </v-btn>
             <v-btn class="fs11" @click="$router.push('groomer').catch(err => {})">
-              Groomer
+              <span class="black--text">Groomer</span>
             </v-btn>
           </v-btn-toggle>
         </v-row>
@@ -50,7 +50,7 @@
         <v-row align="center" justify="center">
           <v-btn-toggle dense v-model="toggle_exclusive" rounded>
             <v-btn class="fs11" @click="$router.push('groomingPlace').catch(err => {})">
-              Grooming Place
+              <span class="black--text">Grooming Place</span>
             </v-btn>
             <v-btn class="fs11 white--text" color="black">
               Groomer
@@ -67,19 +67,19 @@
     <v-bottom-navigation :value="value" grow fixed>
       <v-btn>
         <v-avatar size="35">
-          <v-icon>mdi-home</v-icon>
+          <v-icon color="black">mdi-home</v-icon>
         </v-avatar>
       </v-btn>
 
       <v-btn>
         <v-avatar size="35">
-          <v-icon>mdi-book</v-icon>
+          <v-icon color="black">mdi-book</v-icon>
         </v-avatar>
       </v-btn>
 
       <v-btn>
         <v-avatar size="35">
-          <v-icon>mdi-bullhorn</v-icon>
+          <v-icon color="black">mdi-bullhorn</v-icon>
         </v-avatar>
       </v-btn>
     </v-bottom-navigation>
@@ -98,13 +98,4 @@ export default {
 
 <style>
 @import "../../../src/assets/css/main.css";
-.bottomRightRadius {
-  border-bottom-right-radius: 50px !important;
-}
-.bottomLeftRadius {
-  border-bottom-left-radius: 50px !important;
-}
-.noPointer {
-  pointer-events: none !important;
-}
 </style>

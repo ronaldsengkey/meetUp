@@ -26,7 +26,7 @@
         </v-list>
       </v-navigation-drawer>
     </v-layout>
-
+  
     <v-app-bar
       class="appbar bgTransparent"
       app
@@ -36,9 +36,12 @@
       hide-on-scroll
     >
       <v-app-bar-nav-icon
-        color="darkenPrimary"
         @click.stop="drawer = !drawer"
-      ></v-app-bar-nav-icon>
+      >
+        <v-icon color="darkenPrimary">
+          mdi-menu
+        </v-icon>
+      </v-app-bar-nav-icon>
       <v-spacer></v-spacer>
       <v-avatar size="28">
         <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="John" />
@@ -52,19 +55,19 @@
     <v-bottom-navigation :value="value" grow fixed>
       <v-btn>
         <v-avatar color="primary" size="35">
-          <v-icon>mdi-home</v-icon>
+          <v-icon color="black">mdi-home</v-icon>
         </v-avatar>
       </v-btn>
 
       <v-btn>
         <v-avatar size="35">
-          <v-icon>mdi-book</v-icon>
+          <v-icon color="black">mdi-book</v-icon>
         </v-avatar>
       </v-btn>
 
       <v-btn>
         <v-avatar size="35">
-          <v-icon>mdi-bullhorn</v-icon>
+          <v-icon color="black">mdi-bullhorn</v-icon>
         </v-avatar>
       </v-btn>
     </v-bottom-navigation>

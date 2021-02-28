@@ -12,7 +12,7 @@
       </template></v-text-field
     >
 
-    <v-sheet elevation="1" class="rounded-xl pa-1 mb-3">
+    <v-sheet @click="$router.push('groomerProfile')" elevation="1" class="rounded-xl pa-1 mb-3">
       <v-row>
         <v-col cols="2" class="ml-4 alignCenter">
           <v-avatar size="48">
