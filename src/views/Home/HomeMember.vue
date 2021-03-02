@@ -38,6 +38,11 @@
                   :src="require(`@/assets/${menu.image}`)"
                 />
               </div>
+              <div class="rtl position-absolute" style="right:55%;bottom:0;" v-if="menu.imageSecond">
+                <v-img
+                  :src="require(`@/assets/${menu.imageSecond}`)"
+                />
+              </div>
             </v-card>
           </v-slide-item>
         </v-slide-group>
@@ -115,7 +120,8 @@ export default {
       menu : [
         {
           name : 'Grooming',
-          image : '',
+          image : 'Home/dog-right.png',
+          imageSecond : 'Home/kitty-right.png',
           class : "border primary mr-2 position-relative",
           route : 'groomingPlace'
         },
