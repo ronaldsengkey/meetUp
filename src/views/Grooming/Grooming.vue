@@ -25,6 +25,19 @@
           >mdi-chevron-left</v-icon
         ></v-app-bar-nav-icon
       >
+
+      <v-app-bar-title class="position-absolute titleBarGrooms">
+        <span class="fs28 weight-700 darkenColor">Grooming</span>
+      </v-app-bar-title>
+
+      <div class="position-absolute dogLeft">
+        <v-img src="@/assets/Landing/dog-left.png"></v-img>
+      </div>
+
+      <div class="position-absolute kittyLeft">
+        <v-img src="@/assets/Landing/kitty-left.png"></v-img>
+      </div>
+
     </v-app-bar>
     <v-sheet id="scrolling-techniques-5" class="overflow-y-auto noPointer" height="200px">
       <v-container style="height: 1000px;"> </v-container>
@@ -64,7 +77,7 @@
       <router-view></router-view>
     </v-main>
 
-    <BottomNavigation :value="0"></BottomNavigation>
+    <BottomNavigation :value="5"></BottomNavigation>
     
   </v-container>
 </template>
@@ -82,4 +95,16 @@ export default {
 
 <style>
 @import "../../../src/assets/css/main.css";
+.titleBarGrooms {
+  right: 7%;
+  top: 20%;
+}
+.dogLeft {
+  bottom: -2%;
+  left: 0;
+}
+.kittyLeft {
+  bottom: 0;
+  left: 29%;
+}
 </style>

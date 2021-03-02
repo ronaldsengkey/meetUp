@@ -25,10 +25,10 @@ export default {
     props: {
         value: {
         type: Number,
-        default: 0,
+        default: null,
         required: true,
         },
-    },
+    }
 }
 </script>
 
