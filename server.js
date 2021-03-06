@@ -58,8 +58,6 @@ async function gotCall({url,data = {},method = 'get',headerExtra = {}}){
 }
 
 app.get("/halo", async (req, res) => {
-    // res.send('page not found');
-    // console.log('tes',await gotCall({method:'get',url:'api/users'}))
     let callData = await gotCall({method:'get',url:'api/users'})
     res.send(callData);
 });

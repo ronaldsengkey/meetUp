@@ -1,18 +1,18 @@
 <template>
-  <v-bottom-navigation :value="value" grow fixed>
-       <v-btn height="100%" color="white">
-        <v-avatar color="primary" size="35">
+  <v-bottom-navigation v-model="value" grow fixed>
+       <v-btn value="home" height="100%" color="white">
+        <v-avatar size="35">
           <v-icon color="black">mdi-home</v-icon>
         </v-avatar>
       </v-btn>
 
-      <v-btn height="100%" color="white">
+      <v-btn value="book" height="100%" color="white">
         <v-avatar size="35">
           <v-icon color="black">mdi-book</v-icon>
         </v-avatar>
       </v-btn>
 
-      <v-btn height="100%" color="white">
+      <v-btn value="bullhorn" height="100%" color="white">
         <v-avatar size="35">
           <v-icon color="black">mdi-bullhorn</v-icon>
         </v-avatar>
@@ -22,13 +22,16 @@
 
 <script>
 export default {
-    props: {
-        value: {
-        type: Number,
-        default: null,
-        required: true,
-        },
-    }
+    // props: {
+    //     value: {
+    //       type: String,
+    //       default: 'home',
+    //       required: true,
+    //     },
+    // },
+    data: () => ({
+      value: 'home'
+    }),
 }
 </script>
 

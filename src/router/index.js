@@ -8,6 +8,8 @@ import Grooming from '../views/Grooming/Grooming.vue'
 import Groomer from '../views/Grooming/Groomer.vue'
 import GroomingPlace from '../views/Grooming/GroomingPlace.vue'
 import GroomerProfile from '../views/Grooming/GroomerProfile.vue'
+import PlaceProfile from '../views/Grooming/PlaceProfile.vue'
+import BookGroomer from '../views/Grooming/BookGroomer.vue'
 
 Vue.use(VueRouter)
 
@@ -51,6 +53,16 @@ const routes = [
     path: '/groomerProfile',
     name: 'groomerProfile',
     component: GroomerProfile
+  },
+  {
+    path: '/placeProfile',
+    name: 'placeProfile',
+    component: PlaceProfile
+  },
+  {
+    path: '/bookGroomer',
+    name: 'bookGroomer',
+    component: BookGroomer
   },
 ]
 

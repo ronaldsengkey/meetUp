@@ -2,7 +2,7 @@
   <v-container flat>
     <v-app-bar
       absolute
-      color="primary"
+      src="@/assets/Grooming/royalty.png"
       dark
       flat
       shrink-on-scroll
@@ -13,47 +13,11 @@
       height="200px"
       class="bottomRightRadius bottomLeftRadius"
     >
-      <v-app-bar-nav-icon @click="$router.push('groomingPlace')"
-        ><v-avatar class="avatarBack" color="white" size="30"
+      <v-app-bar-nav-icon @click="$router.push('groomingPlace')">
+        <v-avatar class="avatarBack" color="white" size="30"
           ><v-icon color="black" size="40">mdi-chevron-left</v-icon></v-avatar
         ></v-app-bar-nav-icon
       >
-      <v-app-bar-title class="position-absolute titleBar">
-        <span class="fs28 weight-700 darkenColor">Groomer</span>
-
-        <v-row>
-          <v-col cols="2" class="alignCenter">
-            <v-avatar size="48">
-              <img
-                src="https://randomuser.me/api/portraits/men/85.jpg"
-                alt="John"
-              />
-            </v-avatar>
-          </v-col>
-          <v-col cols="3" class="alignCenter">
-            <span class="fs14 weight-700 username">
-              Amanda
-            </span>
-            <div class="fs12 weight-300" style="color:#3B3530">
-              30 years old
-            </div>
-          </v-col>
-          <v-col cols="3" class="ml-10 alignCenter">
-            <span class="fs12 username" style="color:#3B3530">
-              Rate
-            </span>
-            <div class="fs14 weight-700 username">Rp. 10k/1h</div>
-          </v-col>
-          <v-col class="ml-4 alignCenter">
-            <span class="fs12 username" style="color:#3B3530">
-              Jobs
-            </span>
-            <div class="fs14 weight-700 username">37</div>
-          </v-col>
-        </v-row>
-
-        <div class="fs11 weight-700 preWrap mt-2" style="max-width:175px;">Amanda is a very profesional hourly worker</div>
-      </v-app-bar-title>
     </v-app-bar>
     <v-sheet
       id="scrolling-techniques-5"
@@ -64,6 +28,43 @@
     </v-sheet>
 
     <v-container class="px-3">
+      <v-row>
+        <v-col cols="6"
+          ><span class="fs16 weight-800 username">Royalty</span></v-col
+        >
+        <v-col cols="6" class="textEnd"
+          ><v-rating
+            v-model="rating"
+            background-color="orange lighten-3"
+            color="orange"
+            dense
+            readonly
+            small
+          ></v-rating
+        ></v-col>
+      </v-row>
+
+      <v-row class="mt-0">
+        <v-col cols="1" class="textCenter alignCenter"
+          ><v-icon color="black">mdi-map-marker</v-icon></v-col
+        >
+        <v-col cols="11" class="alignCenter"
+          ><span class="fs11 paleText"
+            >291 Campus Drive, Stanford, CA 94305, United States</span
+          >
+        </v-col>
+      </v-row>
+
+      <v-row class="mt-0 mb-2">
+        <v-col cols="1" class="textCenter alignCenter"
+          ><v-icon color="black">mdi-clock-time-five</v-icon></v-col
+        >
+        <v-col cols="11" class="alignCenter flex-column">
+          <div class="fs12 weight-700 red--text mt-2">Closed</div>
+          <div class="fs11 paleText">8.00 - 18.00</div>
+        </v-col>
+      </v-row>
+
       <p class="fs14 weight-800 username">Services</p>
 
       <v-row class="mb-3">
@@ -186,7 +187,7 @@
     </v-container>
 
     <v-bottom-navigation fixed class="px-7">
-      <v-btn @click="$router.push('bookGroomer')" color="#3B3530" class="borderExtra alignCenter"  height="65%" block>
+      <v-btn color="#3B3530" class="borderExtra alignCenter" height="65%" block>
         Set Appointment
       </v-btn>
     </v-bottom-navigation>
@@ -197,6 +198,7 @@
 export default {
   data: () => ({
     value: 0,
+    rating: 5,
     toggle_exclusive: 0,
   }),
 };
@@ -216,6 +218,9 @@ export default {
   top: 20%;
 }
 .preWrap {
-    white-space: pre-wrap !important;
+  white-space: pre-wrap !important;
+}
+.paleText {
+  color: #aeadab;
 }
 </style>

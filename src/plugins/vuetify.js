@@ -12,7 +12,8 @@ export default new Vuetify({
                 darken: '#F0B04D',
                 orange: '#FE9D1C',
                 teal: '#7BAEB0',
-                purple : '#6058B0'
+                purple : '#6058B0',
+                alert: '#7BAEB0'
             },
         },
     },

@@ -21,8 +21,8 @@
       </template> -->
 
       <v-app-bar-nav-icon @click="$router.push('homeMember')"
-        ><v-icon color="black" size="40"
-          >mdi-chevron-left</v-icon
+        ><v-avatar class="avatarBack" color="white" size="30"
+          ><v-icon color="black" size="40">mdi-chevron-left</v-icon></v-avatar
         ></v-app-bar-nav-icon
       >
 
@@ -77,7 +77,7 @@
       <router-view></router-view>
     </v-main>
 
-    <BottomNavigation :value="5"></BottomNavigation>
+    <BottomNavigation ></BottomNavigation>
     
   </v-container>
 </template>

@@ -25,6 +25,12 @@
 .fs11 {
   font-size: 11px !important;
 }
+.fs16 {
+  font-size: 16px !important;
+}
+.fs18 {
+  font-size: 18px !important;
+}
 .fs28 {
   font-size: 28px !important;
 }
@@ -51,6 +57,9 @@
   }
   .borderExtra {
     border-radius: 15px !important;
+  }
+  .borderXL {
+    border-radius: 20px !important;
   }
   .rtl {
       direction: rtl !important;
@@ -122,4 +131,23 @@
   }
   .v-main__wrap {
     overflow-y: hidden !important;
+  }
+  .avatarBack {
+    opacity: 0.5;
+  }
+  .textEnd {
+    text-align: end !important;
+  }
+  .textCenter {
+    text-align: center !important;
+  }
+  .semiBlackText {
+    color: #3B3530;
+  }
+  .alertPosition{
+    position: fixed !important;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    min-width: calc(100% - 40px);
   }
