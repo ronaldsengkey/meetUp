@@ -55,7 +55,7 @@
           >More <v-icon class="welcome">mdi-arrow-right</v-icon></span
         >
       </p>
-      
+
       <v-row class="mb-3">
         <v-chip small class="darkenPrimary ma-2 px-3 white--text weight-700">
           Haircut
@@ -83,71 +83,76 @@
 
       <p class="fs14 weight-800 username">Date & Time</p>
 
-      <v-sheet class="borderXL position-relative" outlined flat height="60px">
-        <v-row class="ml-4 mr-2">
-          <v-col cols="6">
-            <v-menu
-              ref="menu"
-              v-model="menu"
-              :close-on-content-click="false"
-              :return-value.sync="date"
-              transition="scale-transition"
-              offset-y
-              min-width="auto"
+      <v-sheet class="borderXL rowPlaces" outlined flat max-height="60px">
+        <div class="col ml-4 mt-2">
+          <v-menu
+            ref="menu"
+            v-model="menu"
+            :close-on-content-click="false"
+            :return-value.sync="date"
+            transition="scale-transition"
+            offset-y
+            min-width="auto"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-text-field
+                v-model="date"
+                prepend-icon="mdi-calendar-month"
+                v-bind="attrs"
+                v-on="on"
+              ></v-text-field>
+            </template>
+            <v-date-picker
+              :min="minDate"
+              dark
+              v-model="date"
+              no-title
+              scrollable
             >
-              <template v-slot:activator="{ on, attrs }">
-                <v-text-field
-                  v-model="date"
-                  prepend-icon="mdi-calendar-month"
-                  v-bind="attrs"
-                  v-on="on"
-                ></v-text-field>
-              </template>
-              <v-date-picker :min="minDate" dark v-model="date" no-title scrollable>
-                <v-spacer></v-spacer>
-                <v-btn text color="primary" @click="menu = false">
-                  Cancel
-                </v-btn>
-                <v-btn text color="primary" @click="$refs.menu.save(date)">
-                  OK
-                </v-btn>
-              </v-date-picker>
-            </v-menu>
-          </v-col>
-          <v-col cols="1" class="justify-center mt-4 pl-1">
-              <v-img src="@/assets/Grooming/vertical.png" height="30px" width="1px"> </v-img>
-          </v-col>
-          <v-col cols="4">
-              <v-menu
-                ref="menu"
-                v-model="menu2"
-                :close-on-content-click="false"
-                :nudge-right="40"
-                :return-value.sync="time"
-                transition="scale-transition"
-                offset-y
-                max-width="290px"
-                min-width="290px"
-            >
-                <template v-slot:activator="{ on, attrs }">
-                <v-text-field
-                    v-model="time"
-                    prepend-icon="mdi-clock-time-five"
-                    v-bind="attrs"
-                    v-on="on"
-                ></v-text-field>
-                </template>
-                <v-time-picker
-                dark
-                v-if="menu2"
+              <v-spacer></v-spacer>
+              <v-btn text color="primary" @click="menu = false">
+                Cancel
+              </v-btn>
+              <v-btn text color="primary" @click="$refs.menu.save(date)">
+                OK
+              </v-btn>
+            </v-date-picker>
+          </v-menu>
+        </div>
+        <div class="col">
+          <v-img src="@/assets/Grooming/vertical.png" height="30px" width="1px">
+          </v-img>
+        </div>
+        <div class="col ml-5 mt-2">
+          <v-menu
+            ref="menu"
+            v-model="menu2"
+            :close-on-content-click="false"
+            :nudge-right="40"
+            :return-value.sync="time"
+            transition="scale-transition"
+            offset-y
+            max-width="290px"
+            min-width="290px"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-text-field
                 v-model="time"
-                full-width
-                ampm-in-title
-                @click:minute="$refs.menu.save(time)"
-                ></v-time-picker>
-            </v-menu>
-          </v-col>
-        </v-row>
+                prepend-icon="mdi-clock-time-five"
+                v-bind="attrs"
+                v-on="on"
+              ></v-text-field>
+            </template>
+            <v-time-picker
+              dark
+              v-if="menu2"
+              v-model="time"
+              full-width
+              ampm-in-title
+              @click:minute="$refs.menu.save(time)"
+            ></v-time-picker>
+          </v-menu>
+        </div>
       </v-sheet>
 
       <div class="fs14 weight-800 username mt-4">Meet Place</div>
@@ -159,14 +164,21 @@
     </v-container>
 
     <v-alert
-    v-if="alertBool"
+      v-if="alertBool"
       color="alert"
       type="success"
-        class="borderXL alertPosition"
-        >Success Set</v-alert>
+      class="borderXL alertPosition"
+      >Success Set</v-alert
+    >
 
     <v-bottom-navigation fixed class="px-7">
-      <v-btn @click="alertBool = !alertBool" color="#3B3530" class="borderExtra alignCenter" height="65%" block>
+      <v-btn
+        @click="alertBool = !alertBool"
+        color="#3B3530"
+        class="borderExtra alignCenter"
+        height="65%"
+        block
+      >
         MeetUp
       </v-btn>
     </v-bottom-navigation>
@@ -176,13 +188,13 @@
 <script>
 export default {
   data: () => ({
-    alertBool:false,
+    alertBool: false,
     value: 0,
     date: new Date().toISOString().substr(0, 10),
     menu: false,
-    minDate: new Date().toISOString().slice(0,10),
+    minDate: new Date().toISOString().slice(0, 10),
     menu2: false,
-    time: '11:15',
+    time: "11:15",
     modal: false,
     clickPedicure: false,
     rating: 5,
@@ -220,5 +232,16 @@ export default {
 }
 .v-text-field > .v-input__control > .v-input__slot:before {
   border-style: none;
+}
+.rowPlaces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rowPlaces > * {
+  flex: 1 1 100%;
+}
+.rowPlaces > *:nth-child(2) {
+  flex: 1 1 5%;
 }
 </style>

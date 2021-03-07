@@ -10,6 +10,7 @@ import GroomingPlace from '../views/Grooming/GroomingPlace.vue'
 import GroomerProfile from '../views/Grooming/GroomerProfile.vue'
 import PlaceProfile from '../views/Grooming/PlaceProfile.vue'
 import BookGroomer from '../views/Grooming/BookGroomer.vue'
+import PlaceBooking from '../views/Grooming/PlaceBooking.vue'
 
 Vue.use(VueRouter)
 
@@ -63,6 +64,11 @@ const routes = [
     path: '/bookGroomer',
     name: 'bookGroomer',
     component: BookGroomer
+  },
+  {
+    path: '/placeBooking',
+    name: 'placeBooking',
+    component: PlaceBooking
   },
 ]
 

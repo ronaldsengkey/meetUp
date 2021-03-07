@@ -120,6 +120,9 @@
   .bottomLeftRadius {
     border-bottom-left-radius: 50px !important;
   }
+  .topRightRadius {
+    border-top-right-radius: 50px !important;
+  }
   .noPointer {
     pointer-events: none !important;
   }

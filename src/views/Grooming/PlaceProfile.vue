@@ -11,7 +11,7 @@
       scroll-target="#scrolling-techniques-5"
       scroll-threshold="500"
       height="200px"
-      class="bottomRightRadius bottomLeftRadius"
+      class="bottomLeftRadius"
     >
       <v-app-bar-nav-icon @click="$router.push('groomingPlace')">
         <v-avatar class="avatarBack" color="white" size="30"
@@ -187,7 +187,7 @@
     </v-container>
 
     <v-bottom-navigation fixed class="px-7">
-      <v-btn color="#3B3530" class="borderExtra alignCenter" height="65%" block>
+      <v-btn color="#3B3530" @click="$router.push('placeBooking')" class="borderExtra alignCenter" height="65%" block>
         Set Appointment
       </v-btn>
     </v-bottom-navigation>
