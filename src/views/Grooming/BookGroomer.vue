@@ -178,8 +178,12 @@
         class="borderExtra alignCenter"
         height="65%"
         block
+        v-if="!alertBool"
       >
         MeetUp
+      </v-btn>
+      <v-btn color="backHome" v-if="alertBool" @click="$router.replace('homeMember')" class="borderExtra alignCenter" height="65%" block>
+        Back to home
       </v-btn>
     </v-bottom-navigation>
   </v-container>

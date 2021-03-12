@@ -25,6 +25,15 @@
 .fs11 {
   font-size: 11px !important;
 }
+.fs12 {
+  font-size: 12px !important;
+}
+.fs13 {
+  font-size: 13px !important;
+}
+.fs15 {
+  font-size: 15px !important;
+}
 .fs16 {
   font-size: 16px !important;
 }
@@ -34,8 +43,14 @@
 .fs28 {
   font-size: 28px !important;
 }
+.fs30 {
+  font-size: 30px !important;
+}
 .weight-300 {
   font-weight: 300 !important;
+}
+.weight-500 {
+  font-weight: 500 !important;
 }
   .welcome {
     color: #bcc2d4;
@@ -46,9 +61,7 @@
   .username {
     color: #3b3530;
   }
-  .fs12 {
-    font-size: 12px !important;
-  }
+  
   .weight-800 {
     font-weight: 800 !important;
   }
@@ -70,6 +83,18 @@
 
   .position-relative {
     position: relative !important;
+  }
+  .center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+  .top-right-absolute-below {
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    transform: translate(-85%, -28%);
   }
   .top-right-absolute {
     position: absolute;
@@ -122,6 +147,9 @@
   }
   .topRightRadius {
     border-top-right-radius: 50px !important;
+  }
+  .topLeftRadius {
+    border-top-left-radius: 50px !important;
   }
   .noPointer {
     pointer-events: none !important;

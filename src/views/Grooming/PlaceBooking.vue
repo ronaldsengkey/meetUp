@@ -1,5 +1,5 @@
 <template>
-  <v-container class="ma-0 pa-0">
+  <v-container class="ma-0 pa-0" style="height:1500px;overflow:auto;">
     <v-app-bar
       absolute
       src="@/assets/Grooming/royalty.png"
@@ -82,10 +82,37 @@
           Treatment
         </v-chip>
       </v-row>
+
+      <v-icon>mdi-calendar-month</v-icon><span class="ml-1 fs14 weight-800 username">Date</span>
+      
+      <v-card class="border pa-3 mt-3" flat>a</v-card>
+
+       <div class="mt-3"><v-icon>mdi-clock-time-five</v-icon><span class="ml-1 fs14 weight-800 username">Time</span></div>
+      
+      <v-card class="border pa-3 mt-3" flat>a</v-card>
+
+      <div class="mt-3"><v-icon>mdi-account-multiple</v-icon><span class="ml-1 fs14 weight-800 username">Choose Groomer</span></div>
+      
+      <div style="display:flex;gap:0.5em;">
+        <v-card width="100" height="100" class="border pa-2 mt-3" flat>
+          <v-img contain src="https://randomuser.me/api/portraits/men/85.jpg" style="postion:relative;">
+              <v-card width="40" height="20" class="border smallRating top-right-absolute-below">
+                <v-icon x-small>mdi-star</v-icon>
+                <span class="text-end">5</span>
+              </v-card>
+              <v-icon class="center-absolute" color="green" large>mdi-check</v-icon>
+          </v-img>
+          
+        </v-card>
+        <v-card width="100" height="100" class="border pa-2 mt-3" flat>
+          <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
+        </v-card>
+      </div>
+      
     </v-card>
 
     <v-bottom-navigation fixed class="px-7">
-      <v-btn color="#3B3530" class="borderExtra alignCenter" height="65%" block>
+      <v-btn color="#3B3530" @click="$router.push('bookedBill')" class="borderExtra alignCenter" height="65%" block>
         MeetUp
       </v-btn>
     </v-bottom-navigation>

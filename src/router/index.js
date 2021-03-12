@@ -11,6 +11,7 @@ import GroomerProfile from '../views/Grooming/GroomerProfile.vue'
 import PlaceProfile from '../views/Grooming/PlaceProfile.vue'
 import BookGroomer from '../views/Grooming/BookGroomer.vue'
 import PlaceBooking from '../views/Grooming/PlaceBooking.vue'
+import BookedBill from '../views/Grooming/BookedBill.vue'
 
 Vue.use(VueRouter)
 
@@ -69,6 +70,11 @@ const routes = [
     path: '/placeBooking',
     name: 'placeBooking',
     component: PlaceBooking
+  },
+  {
+    path: '/bookedBill',
+    name: 'bookedBill',
+    component: BookedBill
   },
 ]
 
