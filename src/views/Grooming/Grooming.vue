@@ -41,7 +41,7 @@
       <v-card-text>
         <v-row align="center" justify="center">
           <v-btn-toggle dense v-model="toggle_exclusive" rounded>
-            <v-btn class="fs11 white--text" color="black">
+            <v-btn class="whiteBtn fs11 white--text" color="black">
               Grooming Place
             </v-btn>
             <v-btn class="fs11" @click="$router.push('groomer').catch(err => {})">
@@ -56,7 +56,7 @@
       <v-card-text>
         <v-row align="center" justify="center">
           <v-btn-toggle dense v-model="toggle_exclusive" rounded>
-            <v-btn class="fs11" @click="$router.push('groomingPlace').catch(err => {})">
+            <v-btn class="fs11 whiteBtn" @click="$router.push('groomingPlace').catch(err => {})">
               <span class="black--text">Grooming Place</span>
             </v-btn>
             <v-btn class="fs11 white--text" color="black">

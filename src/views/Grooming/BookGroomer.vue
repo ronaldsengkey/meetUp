@@ -175,14 +175,14 @@
       <v-btn
         @click="alertBool = !alertBool"
         color="#3B3530"
-        class="borderExtra alignCenter"
+        class="whiteBtn borderExtra alignCenter"
         height="65%"
         block
         v-if="!alertBool"
       >
         MeetUp
       </v-btn>
-      <v-btn color="backHome" v-if="alertBool" @click="$router.replace('homeMember')" class="borderExtra alignCenter" height="65%" block>
+      <v-btn color="backHome" v-if="alertBool" @click="$router.replace('homeMember')" class="whiteBtn borderExtra alignCenter" height="65%" block>
         Back to home
       </v-btn>
     </v-bottom-navigation>
@@ -209,10 +209,6 @@ export default {
 
 <style scoped>
 @import "../../../src/assets/css/main.css";
-.v-btn__content {
-  color: white !important;
-  font-size: 14px;
-}
 .titlePlace {
   left: 50%;
   top: 65%;

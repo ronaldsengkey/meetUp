@@ -94,7 +94,10 @@
   .welcome {
     color: #bcc2d4;
   }
-  
+  .whiteBtn > .v-btn__content {
+    color: white !important;
+    font-size: 14px;
+}
   .username {
     color: #3b3530;
   }

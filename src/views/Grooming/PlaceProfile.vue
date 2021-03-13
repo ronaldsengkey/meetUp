@@ -187,7 +187,7 @@
     </v-container>
 
     <v-bottom-navigation fixed class="px-7">
-      <v-btn color="#3B3530" @click="$router.push('placeBooking')" class="borderExtra alignCenter" height="65%" block>
+      <v-btn color="#3B3530" @click="$router.push('placeBooking')" class="whiteBtn borderExtra alignCenter" height="65%" block>
         Set Appointment
       </v-btn>
     </v-bottom-navigation>
@@ -204,8 +204,4 @@ export default {
 
 <style scoped>
 @import "../../../src/assets/css/main.css";
-.v-btn__content {
-  color: white !important;
-  font-size: 14px;
-}
 </style>

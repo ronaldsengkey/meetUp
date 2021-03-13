@@ -98,7 +98,10 @@
         ><span class="ml-1 fs14 weight-800 username">Date</span>
 
         <v-card class="border pa-3 mt-3" flat>
-          <v-date-picker no-title :min="new Date().toISOString().slice(0,10)" />
+          <v-date-picker
+            no-title
+            :min="new Date().toISOString().slice(0, 10)"
+          />
         </v-card>
 
         <div class="mt-3">
@@ -184,7 +187,7 @@
       <v-btn
         color="#3B3530"
         @click="$router.push('bookedBill')"
-        class="borderExtra alignCenter"
+        class="whiteBtn borderExtra alignCenter"
         height="65%"
         block
       >
@@ -210,18 +213,7 @@ export default {
 
 <style scoped>
 @import "../../../src/assets/css/main.css";
-/* @import "../../../src/assets/css/vue-sliding-panel.css"; */
-.v-picker__body {
-  width: auto !important
-}
-
-.v-btn--disabled > .v-btn__content {
-  color: rgba(0, 0, 0, 0.26) !important
-}
-.v-btn__content {
-    color: black !important;
-    font-size: 14px;
-}
+@import "../../../src/assets/css/special.css";
 .sliding-panel {
   background: white;
   left: 0;

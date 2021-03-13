@@ -102,10 +102,10 @@
     >
 
     <v-bottom-navigation fixed class="px-7">
-      <v-btn color="booking" v-if="!alertBool" @click="alertBool = true" class="borderExtra alignCenter" height="65%" block>
+      <v-btn color="booking" v-if="!alertBool" @click="alertBool = true" class="whiteBtn borderExtra alignCenter" height="65%" block>
         Confirm Bill
       </v-btn>
-      <v-btn color="backHome" v-if="alertBool" @click="$router.replace('homeMember')" class="borderExtra alignCenter" height="65%" block>
+      <v-btn color="backHome" v-if="alertBool" @click="$router.replace('homeMember')" class="whiteBtn borderExtra alignCenter" height="65%" block>
         Back to home
       </v-btn>
     </v-bottom-navigation>

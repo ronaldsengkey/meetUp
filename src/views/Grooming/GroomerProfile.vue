@@ -186,7 +186,7 @@
     </v-container>
 
     <v-bottom-navigation fixed class="px-7">
-      <v-btn @click="$router.push('bookGroomer')" color="#3B3530" class="borderExtra alignCenter"  height="65%" block>
+      <v-btn @click="$router.push('bookGroomer')" color="#3B3530" class="whiteBtn borderExtra alignCenter"  height="65%" block>
         Set Appointment
       </v-btn>
     </v-bottom-navigation>
