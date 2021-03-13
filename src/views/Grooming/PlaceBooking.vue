@@ -27,7 +27,7 @@
       <v-container style="height: 1000px;"> </v-container>
     </v-sheet>
 
-    <v-container class="px-3">
+    <v-container class="px-3 position-relative">
       <v-row>
         <v-col cols="6"
           ><span class="fs16 weight-800 username">Royalty</span></v-col
@@ -66,9 +66,12 @@
       </v-row>
 
       <v-img src="@/assets/Grooming/map.png"> </v-img>
-    </v-container>
 
-    <v-card color="primary" class="topRightRadius pa-4">
+
+       <sliding-panel :state.sync="panelState" :scrim="false" :dismissedState="anchored">
+      <v-card color="primary" class="topRightRadius pa-4" style="overflow: auto;height: 85%;">
+      <img src="@/assets/Grooming/horizontal.png" width="65" height="3" style="margin:0 auto;display:block"/>
+
       <p class="fs14 weight-800 username">Services</p>
 
       <v-row class="mb-3">
@@ -83,36 +86,98 @@
         </v-chip>
       </v-row>
 
-      <v-icon>mdi-calendar-month</v-icon><span class="ml-1 fs14 weight-800 username">Date</span>
-      
+      <v-icon>mdi-calendar-month</v-icon
+      ><span class="ml-1 fs14 weight-800 username">Date</span>
+
       <v-card class="border pa-3 mt-3" flat>a</v-card>
 
-       <div class="mt-3"><v-icon>mdi-clock-time-five</v-icon><span class="ml-1 fs14 weight-800 username">Time</span></div>
-      
-      <v-card class="border pa-3 mt-3" flat>a</v-card>
-
-      <div class="mt-3"><v-icon>mdi-account-multiple</v-icon><span class="ml-1 fs14 weight-800 username">Choose Groomer</span></div>
-      
-      <div style="display:flex;gap:0.5em;">
-        <v-card width="100" height="100" class="border pa-2 mt-3" flat>
-          <v-img contain src="https://randomuser.me/api/portraits/men/85.jpg" style="postion:relative;">
-              <v-card width="40" height="20" class="border smallRating top-right-absolute-below">
-                <v-icon x-small>mdi-star</v-icon>
-                <span class="text-end">5</span>
-              </v-card>
-              <v-icon class="center-absolute" color="green" large>mdi-check</v-icon>
-          </v-img>
-          
-        </v-card>
-        <v-card width="100" height="100" class="border pa-2 mt-3" flat>
-          <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
-        </v-card>
+      <div class="mt-3">
+        <v-icon>mdi-clock-time-five</v-icon
+        ><span class="ml-1 fs14 weight-800 username">Time</span>
       </div>
-      
-    </v-card>
+
+      <v-card class="border pa-3 mt-3" flat>
+          <div style="display:flex;gap:1.5em;overflow:auto;">
+            <v-chip color="#CCA152" style="color:white;overflow:unset">10.00 AM</v-chip>
+            <v-chip style="overflow:unset" outlined>01.00 PM</v-chip>
+            <v-chip style="overflow:unset" outlined>04.00 PM</v-chip>
+            <v-chip style="overflow:unset" outlined>07.00 PM</v-chip>
+          </div>
+        </v-card>
+
+        <div class="mt-3">
+          <v-icon>mdi-account-multiple</v-icon
+          ><span class="ml-1 fs14 weight-800 username">Choose Groomer</span>
+        </div>
+
+        <div style="display:flex;gap:0.5em;">
+          <v-card width="100" height="100" class="border pa-2 mt-3" flat>
+            <v-img
+              contain
+              src="https://randomuser.me/api/portraits/men/85.jpg"
+              style="postion:relative;"
+            >
+              <v-card
+                width="30"
+                height="20"
+                class="border smallRating top-right-absolute-below"
+              >
+              </v-card>
+              <div style="display:flex;" class="top-right-absolute-below">
+                <v-icon x-small color="#FE6E6E">mdi-star</v-icon>
+                <div
+                  style="color:#FE6E6E; margin-left:2px !important;"
+                  class="fs13 mr-1"
+                >
+                  5
+                </div>
+              </div>
+              <v-icon class="center-absolute" color="green" large
+                >mdi-check</v-icon
+              >
+            </v-img>
+          </v-card>
+          <v-card width="100" height="100" class="border pa-2 mt-3" flat>
+            <v-img
+              contain
+              src="https://randomuser.me/api/portraits/men/85.jpg"
+              style="postion:relative;"
+            >
+              <v-card
+                width="30"
+                height="20"
+                class="border smallRating top-right-absolute-below"
+              >
+              </v-card>
+              <div style="display:flex;" class="top-right-absolute-below">
+                <v-icon x-small color="#FE6E6E">mdi-star</v-icon>
+                <div
+                  style="color:#FE6E6E; margin-left:2px !important;"
+                  class="fs13 mr-1"
+                >
+                  5
+                </div>
+              </div>
+              <v-icon class="center-absolute" color="green" large
+                >mdi-check</v-icon
+              >
+            </v-img>
+          </v-card>
+        </div>
+      </v-card>
+       </sliding-panel>
+    </v-container>
+
+    
 
     <v-bottom-navigation fixed class="px-7">
-      <v-btn color="#3B3530" @click="$router.push('bookedBill')" class="borderExtra alignCenter" height="65%" block>
+      <v-btn
+        color="#3B3530"
+        @click="$router.push('bookedBill')"
+        class="borderExtra alignCenter"
+        height="65%"
+        block
+      >
         MeetUp
       </v-btn>
     </v-bottom-navigation>
@@ -120,18 +185,39 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import SlidingPanel from 'vue-sliding-panel'
+Vue.use(SlidingPanel)
+
 export default {
   data: () => ({
     value: 0,
     rating: 5,
     toggle_exclusive: 0,
+    panelState: 'anchored',
+    gravity: 'bottom'
   }),
 };
 </script>
 
 <style>
 @import "../../../src/assets/css/main.css";
+@import "../../../src/assets/css/vue-sliding-panel.css";
 .paleText {
   color: #aeadab;
 }
+.dragging {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.sliding-panel {
+    background: white;
+    left: 0;
+    right: 0;
+  }
+  section .sliding-panel {
+        height: 27vh !important;
+    /* bottom: calc(-30vh + 4rem) !important; */
+  }
 </style>
