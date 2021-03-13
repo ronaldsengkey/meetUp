@@ -15,20 +15,18 @@
     >
       <v-container
         fluid
-        style="max-height:1000px;height:735px;"
-        class="bookingBackground topRightRadius topLeftRadius pa-4"
+        class="containerFluid bookingBackground topRightRadius topLeftRadius pa-4"
       >
         <v-row class="mt-5">
-          <v-col cols="12" style="text-align:center;color:#7D7970" class="fs30"
+          <v-col cols="12" class="billPlace fs30"
             >Royalti</v-col
           >
         </v-row>
         <v-row
-          style="color:#7D7970;margin:0 auto;max-width:150px;text-align:center;"
-          class="fs12"
+          class="fs12 billAddress"
           >291 Campus Drive, Stanford, CA 94305, United States</v-row
         >
-        <v-row class="mb-5" style="justify-content:center;">
+        <v-row class="mb-5 justifyCenter">
           <v-rating
             v-model="rating"
             background-color="orange lighten-3"
@@ -41,36 +39,36 @@
 
         <v-card color="detailBook" class="border py-3 px-4" flat outlined>
           <v-row>
-            <div class="col fs15" style="color:#7D7970;">Meet Date</div>
-            <div class="col fs13 textEnd alignCenter" style=";color:#7D7970;">
+            <div class="col fs15 billTextColor">Meet Date</div>
+            <div class="col fs13 textEnd alignCenter billTextColor">
               12-03-2021
             </div>
           </v-row>
           <v-row class="mt-0">
-            <div class="col fs15" style="color:#7D7970;">Meet Time</div>
-            <div class="col fs13 textEnd alignCenter" style=";color:#7D7970;">
+            <div class="col fs15 billTextColor">Meet Time</div>
+            <div class="col fs13 textEnd alignCenter billTextColor">
               10:00 AM
             </div>
           </v-row>
           <v-row class="mt-0">
-            <div class="col fs15" style="color:#7D7970;">Groomer</div>
-            <div class="col fs13 textEnd alignCenter" style=";color:#7D7970;">
+            <div class="col fs15 billTextColor">Groomer</div>
+            <div class="col fs13 textEnd alignCenter billTextColor">
               Amber
             </div>
           </v-row>
         </v-card>
 
-        <div class="fs15 username mt-5 weight-500" style="color:#7D7970;">Service</div>
+        <div class="fs15 username mt-5 weight-500 billTextColor">Service</div>
         <v-container class="px-4">
           <v-row class="mt-0">
-            <div class="col fs15" style="color:#7D7970;">Haircut</div>
-            <div class="col fs13 textEnd alignCenter" style=";color:#7D7970;">
+            <div class="col fs15 billTextColor">Haircut</div>
+            <div class="col fs13 textEnd alignCenter billTextColor">
               Rp. 15.000
             </div>
           </v-row>
           <v-row class="mt-0">
-            <div class="col fs15" style="color:#7D7970;">Shampoo</div>
-            <div class="col fs13 textEnd alignCenter" style=";color:#7D7970;">
+            <div class="col fs15 billTextColor">Shampoo</div>
+            <div class="col fs13 textEnd alignCenter billTextColor">
               Rp. 10.000
             </div>
           </v-row>
@@ -81,13 +79,13 @@
           class="mt-5 border alignCenter"
           block
         >
-          <div style="color:#7D7970;">Add Promo</div>
+          <div class="billTextColor">Add Promo</div>
         </v-btn>
 
         
         <v-row class="mt-3">
-            <div class="col fs15 username mx-0 weight-500" style="color:#7D7970;">Total</div>
-            <div class="col fs13 textEnd alignCenter mr-4" style="color:#7D7970;">
+            <div class="col fs15 username mx-0 weight-500 billTextColor">Total</div>
+            <div class="col fs13 textEnd alignCenter mr-4 billTextColor">
               Rp. 25.000
             </div>
         </v-row>
@@ -117,9 +115,7 @@
 <script>
 export default {
   data: () => ({
-    value: 0,
     rating: 5,
-    toggle_exclusive: 0,
     alertBool: false,
   }),
 };
@@ -127,7 +123,21 @@ export default {
 
 <style>
 @import "../../../src/assets/css/main.css";
-.paleText {
-  color: #aeadab;
+.containerFluid {
+  max-height:1000px;
+  height:735px;
+}
+.billPlace {
+  text-align:center;
+  color:#7D7970
+}
+.billAddress {
+  color:#7D7970;
+  margin:0 auto;
+  max-width:150px;
+  text-align:center;
+}
+.billTextColor {
+  color: #7D7970
 }
 </style>

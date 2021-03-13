@@ -52,7 +52,7 @@
           </v-col>
         </v-row>
 
-        <div class="fs11 weight-700 preWrap mt-2" style="max-width:175px;">Amanda is a very profesional hourly worker</div>
+        <div class="fs11 weight-700 preWrap mt-2 groomerDesc">Amanda is a very profesional hourly worker</div>
       </v-app-bar-title>
     </v-app-bar>
     <v-sheet
@@ -60,7 +60,7 @@
       class="overflow-y-auto noPointer"
       height="200px"
     >
-      <v-container style="height: 1000px;"> </v-container>
+      <v-container class="h-1000"> </v-container>
     </v-sheet>
 
     <v-container class="px-3">
@@ -195,27 +195,17 @@
 
 <script>
 export default {
-  data: () => ({
-    value: 0,
-    toggle_exclusive: 0,
-  }),
+  
 };
 </script>
 
-<style>
+<style scoped>
 @import "../../../src/assets/css/main.css";
 .v-btn__content {
   color: white !important;
   font-size: 14px;
 }
-.marginTop2 {
-  margin-top: -2%;
-}
-.titleBar {
-  left: 0;
-  top: 20%;
-}
-.preWrap {
-    white-space: pre-wrap !important;
+.groomerDesc {
+  max-width:175px;
 }
 </style>

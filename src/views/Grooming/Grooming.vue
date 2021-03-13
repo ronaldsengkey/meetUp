@@ -13,12 +13,6 @@
       height="200px"
       class="bottomRightRadius bottomLeftRadius"
     >
-      <!-- <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to top right, rgba(55,236,186,.7), rgba(25,32,72,.7)"
-        ></v-img>
-      </template> -->
 
       <v-app-bar-nav-icon @click="$router.push('homeMember')"
         ><v-avatar class="avatarBack" color="white" size="30"
@@ -40,7 +34,7 @@
 
     </v-app-bar>
     <v-sheet id="scrolling-techniques-5" class="overflow-y-auto noPointer" height="200px">
-      <v-container style="height: 1000px;"> </v-container>
+      <v-container class="h-1000"> </v-container>
     </v-sheet>
 
     <v-card flat class="py-2" v-if="toggle_exclusive == 0">
@@ -77,7 +71,7 @@
       <router-view></router-view>
     </v-main>
 
-    <BottomNavigation ></BottomNavigation>
+    <BottomNavigation :value="value" ></BottomNavigation>
     
   </v-container>
 </template>
@@ -87,7 +81,7 @@ import BottomNavigation from "@/components/BottomNavigation.vue"
 export default {
   components: { BottomNavigation },
   data: () => ({
-    value: 0,
+    value: 'home',
     toggle_exclusive: 0
   }),
 };
@@ -106,5 +100,9 @@ export default {
 .kittyLeft {
   bottom: 0;
   left: 29%;
+}
+.v-btn__content {
+  color: white !important;
+  font-size: 14px;
 }
 </style>

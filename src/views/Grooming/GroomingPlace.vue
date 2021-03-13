@@ -123,6 +123,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import "../../../src/assets/css/main.css";
 </style>

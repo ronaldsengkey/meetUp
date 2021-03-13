@@ -1,21 +1,34 @@
 .h-100 {
     height: 100% !important;
 }
+.h-1000 {
+  height: 1000px !important;
+}
 .minH-60 {
     min-height: 60% !important;
 }
 .minH-100 {
     min-height: 100% !important;
 }
+.max-height125{
+  max-height: 125px !important;
+}
+
+
+.weight-300 {
+  font-weight: 300 !important;
+}
+.weight-500 {
+  font-weight: 500 !important;
+}
 .weight-700 {
     font-weight: 700 !important;
 }
-.fs24 {
-    font-size: 24px !important;
+.weight-800 {
+  font-weight: 800 !important;
 }
-.fs14 {
-    font-size: 14px !important;
-}
+
+
 .fs9 {
   font-size: 9px !important;
 }
@@ -31,6 +44,9 @@
 .fs13 {
   font-size: 13px !important;
 }
+.fs14 {
+  font-size: 14px !important;
+}
 .fs15 {
   font-size: 15px !important;
 }
@@ -40,45 +56,82 @@
 .fs18 {
   font-size: 18px !important;
 }
+.fs24 {
+  font-size: 24px !important;
+}
 .fs28 {
   font-size: 28px !important;
 }
 .fs30 {
   font-size: 30px !important;
 }
-.weight-300 {
-  font-weight: 300 !important;
+
+
+.border {
+  border-radius: 8px !important;
 }
-.weight-500 {
-  font-weight: 500 !important;
+.borderExtra {
+  border-radius: 15px !important;
 }
+.borderXL {
+  border-radius: 20px !important;
+}
+.bottomRightRadius {
+  border-bottom-right-radius: 50px !important;
+}
+.bottomLeftRadius {
+  border-bottom-left-radius: 50px !important;
+}
+.topRightRadius {
+  border-top-right-radius: 50px !important;
+}
+.topLeftRadius {
+  border-top-left-radius: 50px !important;
+}
+
+
+
   .welcome {
     color: #bcc2d4;
   }
-  .max-height125{
-      max-height: 125px !important;
-  }
+  
   .username {
     color: #3b3530;
   }
+  .semiBlackText {
+    color: #3B3530;
+  }
+  .white--text{
+    color: white !important;
+  }
+  .red--text{
+    color: red !important;
+  }
+  .green--text{
+    color: green !important;
+  }
+  .black--text{
+    color: black !important;
+  }
+  .paleText {
+    color: #aeadab;
+  }
+  .darkenColor {
+    color: #F0B04D !important;
+  }
   
-  .weight-800 {
-    font-weight: 800 !important;
+
+  .flexEnd {
+    align-self: flex-end !important;
   }
-  .border {
-    border-radius: 8px !important;
+  .alignCenter {
+    align-self: center !important;
   }
-  .borderExtra {
-    border-radius: 15px !important;
+  .alignStart {
+    align-self: baseline !important;
   }
-  .borderXL {
-    border-radius: 20px !important;
-  }
-  .rtl {
-      direction: rtl !important;
-  }
-  .bgTransparent {
-    background: transparent !important;
+  .flexStretch {
+    align-self: center !important;
   }
 
   .position-relative {
@@ -115,53 +168,45 @@
     transform: translate(-50%, -50%);
     margin: 0 auto;
   }
-  .flexEnd {
-    align-self: flex-end !important;
-  }
-  .alignCenter {
-    align-self: center !important;
-  }
-  .alignStart {
-    align-self: baseline !important;
-  }
-  .white--text{
-    color: white !important;
-  }
-  .red--text{
-    color: red !important;
-  }
-  .green--text{
-    color: green !important;
-  }
-  .black--text{
-    color: black !important;
-  }
-  .flexStretch {
-    align-self: center !important;
-  }
-  .bottomRightRadius {
-    border-bottom-right-radius: 50px !important;
-  }
-  .bottomLeftRadius {
-    border-bottom-left-radius: 50px !important;
-  }
-  .topRightRadius {
-    border-top-right-radius: 50px !important;
-  }
-  .topLeftRadius {
-    border-top-left-radius: 50px !important;
-  }
-  .noPointer {
-    pointer-events: none !important;
-  }
   .position-absolute {
     position: absolute !important;
   }
-  .paleText {
-    color: #aeadab;
+  .alertPosition{
+    position: fixed !important;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    min-width: calc(100% - 40px);
   }
-  .darkenColor {
-    color: #F0B04D !important;
+  .r15b0 {
+    right:15%;
+    bottom:0;
+  }
+  .r55b0 {
+    right:55%;
+    bottom:0;
+  }
+  .titleBar {
+    left: 0;
+    top: 20%;
+  }
+  .marginTop2 {
+    margin-top: -2%;
+  }
+  .justifyCenter {
+    justify-content: center;
+  }
+  
+  
+  /* misc */
+  .rtl {
+    direction: rtl !important;
+  }
+  .bgTransparent {
+    background: transparent !important;
+  }
+  .noPointer {
+    pointer-events: none !important;
   }
   .v-main__wrap {
     overflow-y: hidden !important;
@@ -175,13 +220,11 @@
   .textCenter {
     text-align: center !important;
   }
-  .semiBlackText {
-    color: #3B3530;
+  .preWrap {
+    white-space: pre-wrap !important;
   }
-  .alertPosition{
-    position: fixed !important;
-    left: 50%;
-    bottom: 50%;
-    transform: translate(-50%, 50%);
-    min-width: calc(100% - 40px);
+  .v-text-field > .v-input__control > .v-input__slot:before {
+    border-style: none !important;
   }
+  
+  

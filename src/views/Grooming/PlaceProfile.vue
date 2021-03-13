@@ -197,30 +197,15 @@
 <script>
 export default {
   data: () => ({
-    value: 0,
-    rating: 5,
-    toggle_exclusive: 0,
+    rating: 5
   }),
 };
 </script>
 
-<style>
+<style scoped>
 @import "../../../src/assets/css/main.css";
 .v-btn__content {
   color: white !important;
   font-size: 14px;
-}
-.marginTop2 {
-  margin-top: -2%;
-}
-.titleBar {
-  left: 0;
-  top: 20%;
-}
-.preWrap {
-  white-space: pre-wrap !important;
-}
-.paleText {
-  color: #aeadab;
 }
 </style>

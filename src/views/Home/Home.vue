@@ -48,11 +48,11 @@
       </v-avatar>
     </v-app-bar>
 
-    <v-main style="padding:6px 0px 0px 12px">
+    <v-main class="v-main">
       <router-view></router-view>
     </v-main>
     
-    <BottomNavigation :value="0"></BottomNavigation>
+    <BottomNavigation :value="'home'"></BottomNavigation>
   </div>
 </template>
 <script>
@@ -70,4 +70,7 @@ export default {
 
 <style scoped>
 @import "../../../src/assets/css/main.css";
+.v-main {
+  padding:6px 0px 0px 12px !important
+}
 </style>

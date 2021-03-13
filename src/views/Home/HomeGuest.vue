@@ -31,12 +31,12 @@
               <v-card-title class="white--text">
                 <span class="fs12">{{menu.name}}</span>
               </v-card-title>
-               <div class="rtl position-absolute" style="right:15%;bottom:0;" v-if="menu.image">
+               <div class="rtl position-absolute r15b0" v-if="menu.image">
                 <v-img
                   :src="require(`@/assets/${menu.image}`)"
                 />
               </div>
-              <div class="rtl position-absolute" style="right:55%;bottom:0;" v-if="menu.imageSecond">
+              <div class="rtl position-absolute r55b0" v-if="menu.imageSecond">
                 <v-img
                   :src="require(`@/assets/${menu.imageSecond}`)"
                 />
@@ -106,13 +106,6 @@ export default {
     return {
       model: null,
       rating: 5,
-      colors: [
-        "indigo",
-        "warning",
-        "pink darken-2",
-        "red lighten-1",
-        "deep-purple accent-4",
-      ],
       menu : [
         {
           name : 'Grooming',

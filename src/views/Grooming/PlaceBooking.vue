@@ -208,7 +208,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import "../../../src/assets/css/main.css";
 /* @import "../../../src/assets/css/vue-sliding-panel.css"; */
 .v-picker__body {
@@ -219,7 +219,7 @@ export default {
   color: rgba(0, 0, 0, 0.26) !important
 }
 .v-btn__content {
-      color: black !important;
+    color: black !important;
     font-size: 14px;
 }
 .sliding-panel {

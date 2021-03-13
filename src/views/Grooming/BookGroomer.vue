@@ -46,7 +46,7 @@
       class="overflow-y-auto noPointer"
       height="200px"
     >
-      <v-container style="height: 1000px;"> </v-container>
+      <v-container class="h-1000"> </v-container>
     </v-sheet>
 
     <v-container class="px-3">
@@ -207,14 +207,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import "../../../src/assets/css/main.css";
 .v-btn__content {
   color: white !important;
   font-size: 14px;
-}
-.marginTop2 {
-  margin-top: -2%;
 }
 .titlePlace {
   left: 50%;
@@ -230,12 +227,6 @@ export default {
   bottom: -15%;
   left: 50%;
   transform: translate(-50%, 0);
-}
-.preWrap {
-  white-space: pre-wrap !important;
-}
-.v-text-field > .v-input__control > .v-input__slot:before {
-  border-style: none;
 }
 .rowPlaces {
   display: flex;
