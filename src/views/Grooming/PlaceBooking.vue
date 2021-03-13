@@ -67,38 +67,50 @@
 
       <v-img src="@/assets/Grooming/map.png"> </v-img>
 
+      <!-- <sliding-panel :state.sync="panelState" :scrim="false" :dismissedState="anchored"> -->
+      <v-card
+        color="primary"
+        class="topRightRadius pa-4"
+        style="overflow: auto;height: 85%;"
+      >
+        <img
+          src="@/assets/Grooming/horizontal.png"
+          width="65"
+          height="3"
+          style="margin:0 auto;display:block"
+        />
 
-       <sliding-panel :state.sync="panelState" :scrim="false" :dismissedState="anchored">
-      <v-card color="primary" class="topRightRadius pa-4" style="overflow: auto;height: 85%;">
-      <img src="@/assets/Grooming/horizontal.png" width="65" height="3" style="margin:0 auto;display:block"/>
+        <p class="fs14 weight-800 username">Services</p>
 
-      <p class="fs14 weight-800 username">Services</p>
+        <v-row class="mb-3">
+          <v-chip small class="darkenPrimary ma-2 px-3 white--text weight-700">
+            Haircut
+          </v-chip>
+          <v-chip small class="darkenPrimary ma-2 px-3 white--text weight-700">
+            Razor Shave
+          </v-chip>
+          <v-chip small class="darkenPrimary ma-2 px-3 white--text weight-700">
+            Treatment
+          </v-chip>
+        </v-row>
 
-      <v-row class="mb-3">
-        <v-chip small class="darkenPrimary ma-2 px-3 white--text weight-700">
-          Haircut
-        </v-chip>
-        <v-chip small class="darkenPrimary ma-2 px-3 white--text weight-700">
-          Razor Shave
-        </v-chip>
-        <v-chip small class="darkenPrimary ma-2 px-3 white--text weight-700">
-          Treatment
-        </v-chip>
-      </v-row>
+        <v-icon>mdi-calendar-month</v-icon
+        ><span class="ml-1 fs14 weight-800 username">Date</span>
 
-      <v-icon>mdi-calendar-month</v-icon
-      ><span class="ml-1 fs14 weight-800 username">Date</span>
+        <v-card class="border pa-3 mt-3" flat>
+          <v-date-picker no-title :min="new Date().toISOString().slice(0,10)" />
+        </v-card>
 
-      <v-card class="border pa-3 mt-3" flat>a</v-card>
+        <div class="mt-3">
+          <v-icon>mdi-clock-time-five</v-icon
+          ><span class="ml-1 fs14 weight-800 username">Time</span>
+        </div>
 
-      <div class="mt-3">
-        <v-icon>mdi-clock-time-five</v-icon
-        ><span class="ml-1 fs14 weight-800 username">Time</span>
-      </div>
-
-      <v-card class="border pa-3 mt-3" flat>
+        <v-card class="border pa-3 mt-3" flat>
           <div style="display:flex;gap:1.5em;overflow:auto;">
-            <v-chip color="#CCA152" style="color:white;overflow:unset">10.00 AM</v-chip>
+            <v-chip color="#CCA152" style="color:white;overflow:unset"
+              >10.00 AM</v-chip
+            >
             <v-chip style="overflow:unset" outlined>01.00 PM</v-chip>
             <v-chip style="overflow:unset" outlined>04.00 PM</v-chip>
             <v-chip style="overflow:unset" outlined>07.00 PM</v-chip>
@@ -165,10 +177,8 @@
           </v-card>
         </div>
       </v-card>
-       </sliding-panel>
+      <!-- </sliding-panel> -->
     </v-container>
-
-    
 
     <v-bottom-navigation fixed class="px-7">
       <v-btn
@@ -185,39 +195,40 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import SlidingPanel from 'vue-sliding-panel'
-Vue.use(SlidingPanel)
+const elements = document.getElementsByClassName("picker__title");
 
+while (elements.length > 0) elements[0].remove();
 export default {
   data: () => ({
-    value: 0,
     rating: 5,
     toggle_exclusive: 0,
-    panelState: 'anchored',
-    gravity: 'bottom'
+    // panelState: "anchored",
+    // gravity: "bottom",
   }),
 };
 </script>
 
 <style>
 @import "../../../src/assets/css/main.css";
-@import "../../../src/assets/css/vue-sliding-panel.css";
-.paleText {
-  color: #aeadab;
+/* @import "../../../src/assets/css/vue-sliding-panel.css"; */
+.v-picker__body {
+  width: auto !important
 }
-.dragging {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.v-btn--disabled > .v-btn__content {
+  color: rgba(0, 0, 0, 0.26) !important
+}
+.v-btn__content {
+      color: black !important;
+    font-size: 14px;
 }
 .sliding-panel {
-    background: white;
-    left: 0;
-    right: 0;
-  }
-  section .sliding-panel {
-        height: 27vh !important;
-    /* bottom: calc(-30vh + 4rem) !important; */
-  }
+  background: white;
+  left: 0;
+  right: 0;
+}
+section .sliding-panel {
+  height: 27vh !important;
+  /* bottom: calc(-30vh + 4rem) !important; */
+}
 </style>

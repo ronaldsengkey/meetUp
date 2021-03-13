@@ -6,11 +6,14 @@ import vuetify from './plugins/vuetify';
 import EasySlider from 'vue-easy-slider'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VCalendar from 'v-calendar';
 
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)
 Vue.use(EasySlider)
+Vue.use(VCalendar);
+
 
 new Vue({
   router,

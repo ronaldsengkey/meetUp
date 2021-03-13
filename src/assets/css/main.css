@@ -157,6 +157,9 @@
   .position-absolute {
     position: absolute !important;
   }
+  .paleText {
+    color: #aeadab;
+  }
   .darkenColor {
     color: #F0B04D !important;
   }
