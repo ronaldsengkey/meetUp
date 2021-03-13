@@ -44,7 +44,7 @@
             <v-btn class="whiteBtn fs11 white--text" color="black">
               Grooming Place
             </v-btn>
-            <v-btn class="fs11" @click="$router.push('groomer').catch(err => {})">
+            <v-btn class="fs11 whiteBtn" @click="$router.push('groomer').catch(err => {})">
               <span class="black--text">Groomer</span>
             </v-btn>
           </v-btn-toggle>
@@ -59,7 +59,7 @@
             <v-btn class="fs11 whiteBtn" @click="$router.push('groomingPlace').catch(err => {})">
               <span class="black--text">Grooming Place</span>
             </v-btn>
-            <v-btn class="fs11 white--text" color="black">
+            <v-btn class="fs11 white--text whiteBtn" color="black">
               Groomer
             </v-btn>
           </v-btn-toggle>
