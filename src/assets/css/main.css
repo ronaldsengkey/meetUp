@@ -4,6 +4,12 @@
 .h-1000 {
   height: 1000px !important;
 }
+.minH-26 {
+  min-height: 26rem !important;
+}
+.minH-34 {
+  min-height: 34rem !important;
+}
 .minH-60 {
     min-height: 60% !important;
 }
@@ -94,6 +100,16 @@
   .welcome {
     color: #bcc2d4;
   }
+  .registerColor > .v-btn__content {
+      color: #FEF8EC !important;
+      font-size: 12px;
+      font-weight: 200;
+  }
+  .loginColor > .v-btn__content {
+      color: #363636 !important;
+      font-size: 12px;
+      font-weight: 300;
+  }
   .whiteBtn > .v-btn__content {
     color: white !important;
     font-size: 14px;
@@ -136,6 +152,12 @@
   .flexStretch {
     align-self: center !important;
   }
+  .alignItemsCenter {
+    align-items: center !important;
+  }
+  .flexColumn {
+    flex-direction: column;
+  }
 
   .position-relative {
     position: relative !important;
@@ -158,9 +180,27 @@
     left: 90%;
     transform: translate(-50%, -50%);
   }
+  .upper-center-absolute {
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   .top-center-absolute {
     position: absolute;
     top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bottomLogin-center-absolute {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bottomRegister-center-absolute {
+    position: absolute;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -199,6 +239,9 @@
   .justifyCenter {
     justify-content: center;
   }
+  .inputPlace .v-text-field__slot {
+    padding-left: 12px !important;;
+  }
   
   
   /* misc */
@@ -223,6 +266,9 @@
   .textCenter {
     text-align: center !important;
   }
+  .textStart {
+    text-align: start;
+  }
   .preWrap {
     white-space: pre-wrap !important;
   }
@@ -230,4 +276,11 @@
     border-style: none !important;
   }
   
+  /* .slidingBooking .sliding-panel {
+    height: 33.5rem !important;
+  } */
   
+  .sliding-panel {
+    left:0;
+    width:100%;
+  }

@@ -14,7 +14,7 @@
         anywhere
       </v-row>
     </div>
-    <div class="weight-700 fs14 bottom-center-absolute" @click="$router.push('homeMember')">
+    <div class="weight-700 fs14 bottom-center-absolute" @click="$router.push('login')">
       Meet Up Now
     </div>
   </v-container>

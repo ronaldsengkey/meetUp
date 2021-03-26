@@ -1,5 +1,5 @@
 <template>
-  <v-container class="ma-0 pa-0" style="height:1500px;overflow:auto;">
+  <v-container class="ma-0 pa-0" style="height:600px;overflow:auto;">
     <v-app-bar
       absolute
       src="@/assets/Grooming/royalty.png"
@@ -67,10 +67,10 @@
 
       <v-img src="@/assets/Grooming/map.png"> </v-img>
 
-      <!-- <sliding-panel :state.sync="panelState" :scrim="false" :dismissedState="anchored"> -->
+      <sliding-panel class="slidingBooking" :state.sync="panelState" :offset="offset" :collapsedOffset="collapsedOffset" :scrim="false" dismissedState="collapsed">
       <v-card
         color="primary"
-        class="topRightRadius pa-4"
+        class="topRightRadius pa-4 minH-34"
         style="overflow: auto;height: 85%;"
       >
         <img
@@ -126,7 +126,75 @@
         </div>
 
         <div style="display:flex;gap:0.5em;">
-          <v-card width="100" height="100" class="border pa-2 mt-3" flat>
+          <v-card width="200" height="100%" class="border pa-3 mt-3" flat>
+            <v-row>
+              <v-col cols="6" class="d-flex justifyCenter alignItemsCenter flexColumn position-relative">
+                <v-card
+                    class="border smallRating vertical-top-absolute py-1 px-2"
+                  >
+                <div class="d-flex">
+                    <v-icon small color="#FE6E6E">mdi-star</v-icon>
+                    <span
+                      style="color:#FE6E6E"
+                      class="ml-2"
+                    >
+                      5
+                    </span>
+                  </div>
+                  </v-card>
+
+                <v-img
+                src="@/assets/Home/certificate.png"
+                class="vertical-middle-absolute"
+                width="45%"
+                height="30%"
+              ></v-img>
+              </v-col>
+              <v-col cols="6">
+                <v-img
+                  contain
+                  src="https://randomuser.me/api/portraits/men/85.jpg"
+                >
+                </v-img>
+              </v-col>
+            </v-row>
+            
+          </v-card>
+          <v-card width="200" height="100%" class="border pa-3 mt-3"  flat>
+            <v-row>
+              <v-col cols="6" class="d-flex justifyCenter alignItemsCenter flexColumn position-relative">
+                <v-card
+                    class="border smallRating vertical-top-absolute py-1 px-2"
+                  >
+                <div class="d-flex">
+                    <v-icon small color="#FE6E6E">mdi-star</v-icon>
+                    <span
+                      style="color:#FE6E6E"
+                      class="ml-2"
+                    >
+                      5
+                    </span>
+                  </div>
+                  </v-card>
+
+                <v-img
+                src="@/assets/Home/certificate.png"
+                class="vertical-middle-absolute"
+                width="45%"
+                height="30%"
+              ></v-img>
+              </v-col>
+              <v-col cols="6">
+                <v-img
+                  contain
+                  src="https://randomuser.me/api/portraits/men/85.jpg"
+                >
+                </v-img>
+              </v-col>
+            </v-row>
+            
+          </v-card>
+          <!-- <v-card width="100" height="100" class="border pa-2 mt-3" flat>
             <v-img
               contain
               src="https://randomuser.me/api/portraits/men/85.jpg"
@@ -151,36 +219,10 @@
                 >mdi-check</v-icon
               >
             </v-img>
-          </v-card>
-          <v-card width="100" height="100" class="border pa-2 mt-3" flat>
-            <v-img
-              contain
-              src="https://randomuser.me/api/portraits/men/85.jpg"
-              style="postion:relative;"
-            >
-              <v-card
-                width="30"
-                height="20"
-                class="border smallRating top-right-absolute-below"
-              >
-              </v-card>
-              <div style="display:flex;" class="top-right-absolute-below">
-                <v-icon x-small color="#FE6E6E">mdi-star</v-icon>
-                <div
-                  style="color:#FE6E6E; margin-left:2px !important;"
-                  class="fs13 mr-1"
-                >
-                  5
-                </div>
-              </div>
-              <v-icon class="center-absolute" color="green" large
-                >mdi-check</v-icon
-              >
-            </v-img>
-          </v-card>
+          </v-card> -->
         </div>
       </v-card>
-      <!-- </sliding-panel> -->
+      </sliding-panel>
     </v-container>
 
     <v-bottom-navigation fixed class="px-7">
@@ -205,22 +247,39 @@ export default {
   data: () => ({
     rating: 5,
     toggle_exclusive: 0,
-    // panelState: "anchored",
-    // gravity: "bottom",
+    anchored: 'anchored',
+    panelState: "collapsed"
   }),
+  computed: {
+    offset : function(){
+      return screen.height - 200 + 'px';
+    },
+    collapsedOffset: function(){
+      return screen.height - 520 + 'px';
+    }
+  }
 };
 </script>
 
 <style scoped>
 @import "../../../src/assets/css/main.css";
 @import "../../../src/assets/css/special.css";
-.sliding-panel {
-  background: white;
-  left: 0;
-  right: 0;
+.vertical-top-absolute {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-section .sliding-panel {
-  height: 27vh !important;
-  /* bottom: calc(-30vh + 4rem) !important; */
+.vertical-middle-absolute {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+.top-right-absolute-below {
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    transform: translate(-85%, -28%);
+  }
 </style>

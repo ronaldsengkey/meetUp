@@ -12,6 +12,8 @@ import PlaceProfile from '../views/Grooming/PlaceProfile.vue'
 import BookGroomer from '../views/Grooming/BookGroomer.vue'
 import PlaceBooking from '../views/Grooming/PlaceBooking.vue'
 import BookedBill from '../views/Grooming/BookedBill.vue'
+import Login from '../views/Access/Login.vue';
+import Register from '../views/Access/Register.vue';
 
 Vue.use(VueRouter)
 
@@ -20,6 +22,16 @@ const routes = [
     path: '/',
     name: 'Landing',
     component: Landing
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
   {
     path: '/home',
