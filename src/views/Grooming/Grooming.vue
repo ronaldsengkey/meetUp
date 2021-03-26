@@ -13,16 +13,17 @@
       height="200px"
       class="bottomRightRadius bottomLeftRadius"
     >
-
+      <div class="whiter-top-circle"></div>
+      <div class="white-top-circle"></div>
       <v-app-bar-nav-icon @click="$router.push('homeMember')"
         ><v-avatar class="avatarBack" color="white" size="30"
-          ><v-icon color="black" size="40">mdi-chevron-left</v-icon></v-avatar
+          ><v-icon color="black" size="30">mdi-chevron-left</v-icon></v-avatar
         ></v-app-bar-nav-icon
       >
 
-      <v-app-bar-title class="position-absolute titleBarGrooms">
-        <span class="fs28 weight-700 darkenColor">Grooming</span>
-      </v-app-bar-title>
+      <v-spacer></v-spacer>
+
+      <v-subheader class="fs28 weight-700 darkenColor">Grooming</v-subheader>
 
       <div class="position-absolute dogLeft">
         <v-img src="@/assets/Landing/dog-left.png"></v-img>

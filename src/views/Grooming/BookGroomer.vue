@@ -13,14 +13,16 @@
       height="200px"
       class="bottomRightRadius bottomLeftRadius"
     >
+      <div class="whiter-top-circle"></div>
+      <div class="white-top-circle"></div>
       <v-app-bar-nav-icon @click="$router.go(-1)"
         ><v-avatar class="avatarBack" color="white" size="30"
-          ><v-icon color="black" size="40">mdi-chevron-left</v-icon></v-avatar
+          ><v-icon color="black" size="30">mdi-chevron-left</v-icon></v-avatar
         ></v-app-bar-nav-icon
       >
       <v-spacer></v-spacer>
 
-      <span class="fs28 weight-700 darkenColor">Groomer</span>
+      <v-subheader class="fs28 weight-700 darkenColor">Groomer</v-subheader>
       <v-app-bar-title class="position-absolute titlePlace">
         <div class="flex-column justify-center">
           <div class="fs18 weight-700 semiBlackText textCenter">Amanda</div>

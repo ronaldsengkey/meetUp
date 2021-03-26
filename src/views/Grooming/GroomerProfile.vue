@@ -13,16 +13,16 @@
       height="200px"
       class="bottomRightRadius bottomLeftRadius"
     >
+      <div class="whiter-top-circle"></div>
+      <div class="white-top-circle"></div>
       <v-app-bar-nav-icon @click="$router.push('groomingPlace')"
         ><v-avatar class="avatarBack" color="white" size="30"
-          ><v-icon color="black" size="40">mdi-chevron-left</v-icon></v-avatar
+          ><v-icon color="black" size="30">mdi-chevron-left</v-icon></v-avatar
         ></v-app-bar-nav-icon
       >
-      <v-app-bar-title class="position-absolute titleBar">
-        <span class="fs28 weight-700 darkenColor">Groomer</span>
-
-        <v-row>
-          <v-col cols="2" class="alignCenter">
+      <v-app-bar-title class="position-absolute titleBar pl-5">
+        <v-row class="mt-5">
+          <v-col cols="2" class="flexEnd">
             <v-avatar size="48">
               <img
                 src="https://randomuser.me/api/portraits/men/85.jpg"
@@ -52,8 +52,12 @@
           </v-col>
         </v-row>
 
-        <div class="fs11 weight-700 preWrap mt-2 groomerDesc">Amanda is a very profesional hourly worker</div>
+        <div class="fs12 weight-700 preWrap mt-2 groomerDesc">Amanda is a very profesional hourly worker</div>
       </v-app-bar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-subheader class="fs28 weight-700 darkenColor">Groomer</v-subheader>
     </v-app-bar>
     <v-sheet
       id="scrolling-techniques-5"
@@ -206,6 +210,7 @@ export default {
   font-size: 14px;
 }
 .groomerDesc {
-  max-width:175px;
+  max-width:200px;
+  margin-left: 5.2em !important;
 }
 </style>

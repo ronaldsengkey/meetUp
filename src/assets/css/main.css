@@ -242,6 +242,26 @@
   .inputPlace .v-text-field__slot {
     padding-left: 12px !important;;
   }
+  .white-top-circle {
+    height: 250px;
+    border-radius: 50%;
+    background-color:rgb(255,255,255,0.3);
+    width: 249px;
+    position: fixed;
+    right: -80px;
+    top: -35px;
+    z-index: -1;
+  }
+  .whiter-top-circle {
+    height: 250px;
+    border-radius: 50%;
+    background-color:rgb(255,255,255,0.15);
+    width: 249px;
+    position: fixed;
+    right: -38px;
+    top: -35px;
+    z-index: -1;
+  }
   
   
   /* misc */
@@ -284,3 +304,4 @@
     left:0;
     width:100%;
   }
+  
