@@ -3,9 +3,10 @@ var app = express();
 const got = require('got');
 
 const port = 8080;
-let defHeaders = {'Content-Type': 'application/json'};
+let defHeaders = {'Content-Type': 'application/json',"Accept": "*/*","Cache-Control": "no-cache"};
 let gotReq = got.extend({
-	prefixUrl: 'https://reqres.in/',
+	// prefixUrl: 'http://meetup.zapto.org:8092/',
+    prefixUrl: 'http://192.168.0.100:8092/',
 	responseType: 'json',
     resolveBodyOnly: true,
 });
@@ -57,7 +58,7 @@ async function gotCall({url,data = {},method = 'get',headerExtra = {}}){
     })
 }
 
-app.get("/halo", async (req, res) => {
-    let callData = await gotCall({method:'get',url:'api/users'})
+app.get("/companyList", async (req, res) => {
+    let callData = await gotCall({method:'get',url:'account/master/company',headerExtra:{param:JSON.stringify({day:req.headers.day})}})
     res.send(callData);
 });

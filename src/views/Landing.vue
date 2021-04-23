@@ -22,11 +22,7 @@
 
 <script>
 export default {
-  mounted(){
-    this.axios.get('halo').then((response) => {
-      console.log(response.data)
-    })
-  }
+  
 }
 </script>
 <style scoped>

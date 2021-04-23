@@ -13,6 +13,7 @@ Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
 Vue.use(EasySlider)
 Vue.use(VCalendar);
+Vue.use(require('vue-moment'));
 
 
 new Vue({
