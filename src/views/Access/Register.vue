@@ -8,14 +8,15 @@
     <div class="upper-center-absolute">
       <img src="@/assets/Landing/landing.png" width="125" />
     </div>
-    <v-card flat class="borderExtra bottomRegister-center-absolute pa-2 containerRegister" color="#FEF8EC">
+    <v-card flat class="borderExtra bottomRegister-center-absolute pa-2 containerRegister w-90" color="#FEF8EC">
         <v-card-title class="my-3" style="font-size:unset;font-weight:unset;line-height:unset;">Already have an account?<span class="ml-1" style="font-weight:700;" @click="$router.push('login')">&nbsp; Sign in</span></v-card-title>
 
-         <v-text-field placeholder="Email" type="email" solo class="inputPlace borderExtra mx-3" flat dense
+         <v-text-field v-model="email" placeholder="Email" type="email" solo class="inputPlace borderExtra mx-3" flat dense
             ></v-text-field
         >
 
         <v-text-field
+        v-model="phone"
         placeholder="Phone"
         type="number"
         solo
@@ -24,7 +25,7 @@
         dense
       ></v-text-field>
 
-        <v-text-field placeholder="Password" type="password" solo class="inputPlace borderExtra mx-3" flat dense
+        <v-text-field v-model="password" placeholder="Password" type="password" solo class="inputPlace borderExtra mx-3" flat dense
             ></v-text-field
         >
 
@@ -33,6 +34,7 @@
             class="registerColor borderExtra alignCenter pa-3 mx-3 mb-4"
             height="65%"
             depressed
+            @click="submitForm()"
             style="min-width:95% !important; text-transform:unset !important;"
         >
         Sign Up
@@ -87,6 +89,13 @@
           </v-btn>
       </v-card>
     </sliding-panel>
+    <v-alert
+      v-if="alertBool"
+      color="alert"
+      :type="alertType"
+      class="borderXL alertPosition"
+      >{{registerResponse}}</v-alert
+    >
   </v-container>
 </template>
 
@@ -99,7 +108,43 @@ export default {
     panelState: "hidden",
     dismissedState : "hidden",
     gravity: "bottom",
+    email:"",
+    phone:"",
+    password:"",
+    alertBool: false,
+    registerResponse: "",
+    alertType:""
   }),
+  methods:{
+    async submitForm(){
+      let bodyForm = { email: this.email,password:this.password,phone:this.phone };
+      let headers = {
+          "Content-Type":'application/json',
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "body": JSON.stringify(bodyForm)
+      };
+      this.axios.post('register',JSON.stringify(bodyForm),{headers}).then((result) => {
+        let responseRegister = result.data;
+        if(responseRegister.responseCode == '200'){
+          this.alertType = 'success'
+          this.alertBool = true;
+          this.registerResponse = responseRegister.responseMessage;
+          setTimeout(() => {
+            this.$router.replace('login')
+          }, 1500);
+        } else {
+          this.alertType = 'error'
+          this.alertBool = true;
+          this.registerResponse = responseRegister.responseMessage;
+          setTimeout(() => {
+            this.alertBool = false;
+          }, 3000);
+        } 
+        
+      })
+    }
+  }
 };
 </script>
 <style scoped>

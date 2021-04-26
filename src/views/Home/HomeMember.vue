@@ -62,7 +62,7 @@
 
       <v-sheet elevation="1" class="rounded-xl pa-1">
         <v-row>
-          <v-col cols="2" class="ml-4 alignCenter">
+          <v-col cols="2" class="ml-4 alignCenter" @click="logout()">
             <v-avatar size="48">
               <img
                 src="https://randomuser.me/api/portraits/men/85.jpg"
@@ -101,6 +101,13 @@
           </v-col>
         </v-row>
       </v-sheet>
+      <v-alert
+        v-if="alertBool"
+        color="alert"
+        type="error"
+        class="borderXL alertPosition"
+        >{{logoutResponse}}</v-alert
+      >
     </v-container>
 </template>
 
@@ -131,8 +138,34 @@ export default {
         }
       ],
       slides: ["First", "Second", "Third", "Fourth", "Fifth"],
+      alertBool: false,
+      logoutResponse:""
     };
   },
+  methods:{
+    async logout(){
+      let bodyForm = { token: JSON.parse(localStorage.getItem('loginData'))[0].token };
+      let headers = {
+          "Content-Type":'application/json',
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "body": JSON.stringify(bodyForm)
+      };
+      this.axios.post('logout',JSON.stringify(bodyForm),{headers}).then((result) => {
+        let responseLogout = result.data;
+        if(responseLogout.responseCode == '200'){
+          localStorage.clear();
+          this.$router.replace('login')
+        } else {
+          this.alertBool = true;
+          this.logoutResponse = responseLogout.responseMessage;
+          setTimeout(() => {
+            this.alertBool = false;
+          }, 2000);
+        }
+      })
+    },
+  }
 };
 </script>
 
