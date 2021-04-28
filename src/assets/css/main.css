@@ -95,7 +95,17 @@
   border-top-left-radius: 50px !important;
 }
 
+.smallerTopRightRadius {
+  border-top-right-radius: 25px !important;
+}
+.smallerTopLeftRadius {
+  border-top-left-radius: 25px !important;
+}
 
+  .nameProfile {
+    color: #363636 !important;
+    font-size: 16px;
+  }
 
   .welcome {
     color: #bcc2d4;

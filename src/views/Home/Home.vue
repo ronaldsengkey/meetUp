@@ -43,7 +43,7 @@
         </v-icon>
       </v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <v-avatar size="28">
+      <v-avatar size="28" @click="$router.push('profile')">
         <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="John" />
       </v-avatar>
     </v-app-bar>
